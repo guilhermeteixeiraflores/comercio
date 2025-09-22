@@ -15,17 +15,11 @@ public class Comercio {
 
     public static void main(String[] args) {
        Banco b = new Banco();
-       Connection conexao = b.conectar();
+        
+        Connection conexao = b.conectar("comercio");
        
-       Produto p = new Produto("Café Expresso", 5.90);
-       
-       if (conexao != null){
-           try{
+       Produto p = new Produto("Café Gelado",9.90);
                b.salvar(p, conexao);
-                 conexao.close();
-       }catch (SQLException e){
-           System.out.println("Erro ao Fechar a conexão com o Banco de Dados!");
-       }
-    }
+      
 }
 }
