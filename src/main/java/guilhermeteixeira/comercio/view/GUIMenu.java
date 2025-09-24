@@ -5,6 +5,7 @@
 package guilhermeteixeira.comercio.view;
 
 import guilhermeteixeira.comercio.modelo.Produto;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -218,6 +219,8 @@ public class GUIMenu extends javax.swing.JFrame {
                Produto produto = new Produto(nome, precoConvertido);
                produto.apresentarProduto();
                
+               
+               
                jTextFieldCadastroProdutoNome.setText("");
                jTextFieldCadastroProdutoPreco.setText("");
                                     
@@ -232,8 +235,9 @@ public class GUIMenu extends javax.swing.JFrame {
     }
     
    
-      
-
+      public JInternalFrame getJInternalFrameCadastroProduto(){
+      return jInternalFrameCadastroProduto;
+      }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroProdutoCancelar;
     private javax.swing.JButton jButtonCadastroProdutoSalvar;

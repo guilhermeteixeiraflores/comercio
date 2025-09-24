@@ -23,11 +23,12 @@ public class Banco {
           usuario = "root";
           senha = "root";
           
-          inicializarBanco(url, usuario, senha);
-      }
-        public Connection conectar(String banco) {
+           }
+        public Connection conectar() {
         try {
             url = "jdbc:mysql://localhost:3306/comercio";
+             usuario = "root";
+             senha = "root";
           Connection conexao =  DriverManager.getConnection(url, usuario, senha);
           
            System.out.println("Conexao Com o Banco de Dados Com Sucesso!");
@@ -39,12 +40,13 @@ public class Banco {
             
         }
     }
-    public void salvar (Produto produto, Connection conexao){
+    public void salvar(String nome, double preco, Connection conexao){
         String sql = "INSERT INTO produto(nome, preco) VALUES(?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-             stmt.setString(1, produto.getNome());
-             stmt.setDouble(2, produto.getPreco());
+            
+             stmt.setString(1, nome);
+             stmt.setDouble(2, preco);
              
              int linhasAfetadas = stmt.executeUpdate();
              
@@ -56,7 +58,11 @@ public class Banco {
             System.out.println("O Produto Não Foi Salvo !");
         }
     }
-       public void inicializarBanco(String url, String usuario, String senha) {
+       public void inicializarBanco() {
+           url = "jdbc:mysql://localhost:3306";
+          usuario = "root";
+          senha = "root";
+          
            try {
                Connection conexao = DriverManager.getConnection(url, usuario, senha);
                

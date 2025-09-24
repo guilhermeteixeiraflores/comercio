@@ -4,6 +4,9 @@
  */
 package guilhermeteixeira.comercio.modelo;
 
+import guilhermeteixeira.comercio.controle.Banco;
+import java.sql.Connection;
+
 /**
  *
  * @author GUILHERME
@@ -15,6 +18,8 @@ public class Produto {
      public Produto(String nome, double preco){
          this.nome = nome;
          this.preco = preco;
+         
+         salvar(nome, preco);
          
      }
 
@@ -47,5 +52,12 @@ public class Produto {
     }
     public void apresentarProduto(){
         System.out.println("Nome: "+nome+",R$ "+preco);
+    }
+   private void salvar(String nome, double preco){
+       
+        Banco b = new Banco();
+                Connection conexao = b.conectar();
+                b.salvar(nome, preco, conexao);
+        
     }
 }
