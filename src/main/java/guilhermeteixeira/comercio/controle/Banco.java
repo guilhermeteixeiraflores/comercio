@@ -10,8 +10,11 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.Normalizer;
+import java.util.ArrayList;
 
 public class Banco {
     private String url ;
@@ -98,5 +101,38 @@ public class Banco {
            } catch (SQLException e){
              System.out.println("Erro ao conectar no banco de dados no metodo inicializr banco");
           }
+       }
+       public ArrayList<Produto> buscarPorTrechoNome(String trechoNome){
+           ArrayList<Produto> listaDeProdutos = new ArrayList<>();
+           String trechoNormalizado = "%" + normalizarTexto(trechoNome) + "%";
+           String sql = "SELECT * FROM produto WHERE nome LIKE ?";
+            try {
+                Connection conexao = conectar();
+                PreparedStatement stmt = conexao.prepareStatement(sql);
+                
+                stmt.setString (1, trechoNormalizado);
+                
+                ResultSet rs = stmt.executeQuery();
+                
+                while (rs.next()){
+                    int id = rs.getInt("id");
+                    String nome = rs.getString("nome");
+                    double preco = rs.getDouble("preco");
+                    Produto produto = new Produto(nome, preco);
+                    produto.setId(id);
+                    listaDeProdutos.add(produto);
+                    
+                }
+                   rs.close();
+                   stmt.close();
+                   conexao.close();
+                  } catch (SQLException e){
+                      System.out.println("Não conseguiu conectar no banco de dados no metodo buscarPorTrechoNome()");
+                  }
+            return listaDeProdutos;
+                      }
+       private String normalizarTexto(String trecho){
+          return Normalizer.normalize(trecho, Normalizer.Form.NFD).replace("[^\\p(ASCII]","");
+          
        }
 }

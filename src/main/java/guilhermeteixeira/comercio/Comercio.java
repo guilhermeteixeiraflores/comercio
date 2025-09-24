@@ -7,6 +7,7 @@ import guilhermeteixeira.comercio.modelo.Produto;
 import guilhermeteixeira.comercio.view.GUIMenu;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,6 +28,13 @@ public class Comercio {
               GUIMenu janelaPrincipal = new GUIMenu();
                Banco b = new Banco();
                 b.inicializarBanco();
+                
+                ArrayList<Produto> produtos = b.buscarPorTrechoNome("pastel");
+                
+                for(Produto produto: produtos){
+                    produto.apresentarProduto();
+                }
+                
                 b = null;
                 
               java.awt.EventQueue.invokeLater(new Runnable(){

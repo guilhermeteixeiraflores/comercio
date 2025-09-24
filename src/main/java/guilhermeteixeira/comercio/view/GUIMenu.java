@@ -218,7 +218,7 @@ public class GUIMenu extends javax.swing.JFrame {
                double precoConvertido = Double.parseDouble(preco);
                Produto produto = new Produto(nome, precoConvertido);
                produto.apresentarProduto();
-               
+               produto.salvar(nome, precoConvertido);
                
                
                jTextFieldCadastroProdutoNome.setText("");
