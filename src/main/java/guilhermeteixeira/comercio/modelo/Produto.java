@@ -6,6 +6,7 @@ package guilhermeteixeira.comercio.modelo;
 
 import guilhermeteixeira.comercio.controle.Banco;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,12 @@ public class Produto {
     private int id;
     private String nome;
     private double preco;
+    
+    public Produto(){
+          this.id = 0;
+         this.nome = "";
+         this.preco = 0;
+    }
     
      public Produto(String nome, double preco){
          this.id = 0;
@@ -57,13 +64,22 @@ public class Produto {
     }
     
     
-   public void salvar(String nome, double preco){
-       
-        Banco b = new Banco();
+         public void salvar(String nome, double preco){
+                Banco b = new Banco();
                 Connection conexao = b.conectar();
                 b.salvar(nome, preco, conexao);
+         }
         
-    }
+            public ArrayList<Produto> pesquisar(String nome){
+                 Banco b = new Banco();
+                Connection conexao = b.conectar();
+                ArrayList<Produto> produtos = b.buscarPorTrechoNome(nome);
+                
+                return produtos;
+            }
+            public void deletar(int id){
+                
+            }
 
     /**
      * @return the id

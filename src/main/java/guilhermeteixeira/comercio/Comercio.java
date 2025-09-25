@@ -8,7 +8,6 @@ import guilhermeteixeira.comercio.view.GUIMenu;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 /**
  *
  * @author GUILHERME TEIXEIRA FLORES CPF:126.202.918.01
@@ -21,8 +20,7 @@ public class Comercio {
        
        Produto p = new Produto("Café Gelado",9.90);
                b.salvar(p, conexao);
-      
-}
+      }
 }*/
           public static void main (String args[]){
               GUIMenu janelaPrincipal = new GUIMenu();
@@ -41,6 +39,7 @@ public class Comercio {
               public void run(){
                   janelaPrincipal.setVisible(true);
                   janelaPrincipal.getJInternalFrameCadastroProduto().setVisible(false);
+                  janelaPrincipal.getJInternalFramePesquisar().setVisible(false);
               }
               } );  
                       }
