@@ -5,7 +5,10 @@
 package guilhermeteixeira.comercio.view;
 
 import guilhermeteixeira.comercio.modelo.Produto;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -158,6 +161,11 @@ public class GUIMenu extends javax.swing.JFrame {
         });
 
         jButtonPesquisarCancelar.setText("Cancelar");
+        jButtonPesquisarCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFramePesquisarLayout = new javax.swing.GroupLayout(jInternalFramePesquisar.getContentPane());
         jInternalFramePesquisar.getContentPane().setLayout(jInternalFramePesquisarLayout);
@@ -340,7 +348,7 @@ public class GUIMenu extends javax.swing.JFrame {
             Produto produto = new Produto();
             ArrayList<Produto> produtos = produto.pesquisar(nome);
             
-            DefaultTableModel modelo = new DefaultTableModel();
+           DefaultTableModel modelo = new DefaultTableModel();
             modelo.addColumn("ID");
             modelo.addColumn("nome");
             modelo.addColumn("preco");
@@ -351,31 +359,49 @@ public class GUIMenu extends javax.swing.JFrame {
                 
             }
             jInternalFramePesquisar.setVisible(true);
-        
+       
     }//GEN-LAST:event_jMenuItemPesquisarProdutoActionPerformed
 
     private void jButtonPesquisarConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarConfirmarActionPerformed
-        // TODO add your handling code here:
+             // TODO add your handling code here:
+              Produto produto = new Produto();
         String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
-        System.out.println("Opção Selecionada: "+opcao);
-        
-        int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
-        System.out.println("ID Informado: "+idPesquisar);
-          if (opcao.equals("Excluir")){
-              
-          } else { //editar
-              
-          }
-                
+          System.out.println("Opção selecionada:"+ opcao);
+          
+           int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
+             System.out.println("ID Informado: "+idPesquisar);
+          
+        if (opcao.equals("Excluir")){
+                  try {
+                      produto.deletar(idPesquisar);
+                  } catch (SQLException ex) {
+                      Logger.getLogger(GUIMenu.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+            JOptionPane.showMessageDialog(rootPane,"O produto de ID: " +idPesquisar+ " Foi Excluido com Sucesso!");
+            
+           
+            jComboBoxPesquisarAcao.setSelectedIndex(0);
+            jTextFieldPesquisarID.setText("");
+            jInternalFramePesquisar.setVisible(false);
+        }else {
+             
+        }       
     }//GEN-LAST:event_jButtonPesquisarConfirmarActionPerformed
-    
-  
+
+    private void jButtonPesquisarCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarCancelarActionPerformed
+        // TODO add your handling code here:
+        jTextFieldPesquisarID.setText("");
+        jComboBoxPesquisarAcao.setSelectedIndex(0);
+        jInternalFramePesquisar.setVisible(false);
+    }//GEN-LAST:event_jButtonPesquisarCancelarActionPerformed
+      
       public JInternalFrame getJInternalFrameCadastroProduto(){
       return jInternalFrameCadastroProduto;
         }
          public JInternalFrame getJInternalFramePesquisar(){
              return jInternalFramePesquisar;
          }
+      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroProdutoCancelar;
     private javax.swing.JButton jButtonCadastroProdutoSalvar;

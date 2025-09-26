@@ -6,6 +6,7 @@ package guilhermeteixeira.comercio.modelo;
 
 import guilhermeteixeira.comercio.controle.Banco;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -77,8 +78,10 @@ public class Produto {
                 
                 return produtos;
             }
-            public void deletar(int id){
-                
+            public void deletar(int id) throws SQLException{
+                  Banco b = new Banco();
+                Connection conexao = b.conectar();
+                b.deletar(id);
             }
 
     /**

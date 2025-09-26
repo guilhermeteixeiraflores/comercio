@@ -132,7 +132,26 @@ public class Banco {
             return listaDeProdutos;
                       }
        private String normalizarTexto(String trecho){
-          return Normalizer.normalize(trecho, Normalizer.Form.NFD).replace("[^\\p(ASCII]","");
+          return Normalizer.normalize(trecho, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
           
        }
+       public void deletar(int id) throws SQLException{
+           try{ 
+           String sql = "DELETE FROM produto WHERE id =?";
+           Connection conexao = conectar();
+           PreparedStatement stmt = conexao.prepareStatement(sql);
+           stmt.setInt(1, id);
+           
+           int linhasAfetadas = stmt.executeUpdate();
+           if (linhasAfetadas > 0){
+               System.out.println("O Produto de ID:" +id+ "Foi Excluido com sucesso!");
+                } else {
+                System.out.println("O Produto de ID:" +id+ "Não Foi Encontrado!");
+           }
+           stmt.close();
+           conexao.close();
+        } catch (SQLException e){
+              System.out.println("Houve um erro ao tentar conectar no banco de dados no metodo deletar!");
+}
+}
 }
