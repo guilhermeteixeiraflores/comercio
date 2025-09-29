@@ -37,6 +37,15 @@ public class GUIMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jInternalFrameEditarCadastro = new javax.swing.JInternalFrame();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldEditarNome = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldEditarPreco = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldEditarID = new javax.swing.JTextField();
+        jButtonEditarSalvar = new javax.swing.JButton();
+        jButtonEditarCancelar = new javax.swing.JButton();
         jInternalFrameCadastroProduto = new javax.swing.JInternalFrame();
         jLabelCadastroProdutoNome = new javax.swing.JLabel();
         jTextFieldCadastroProdutoNome = new javax.swing.JTextField();
@@ -65,6 +74,74 @@ public class GUIMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro e Venda de Produtos");
+
+        jInternalFrameEditarCadastro.setTitle("Edição De Cadastros");
+        jInternalFrameEditarCadastro.setVisible(true);
+
+        jLabel3.setText("Nome do Produto");
+
+        jLabel4.setText("Preço");
+
+        jLabel5.setText("ID:");
+
+        jTextFieldEditarID.setEnabled(false);
+
+        jButtonEditarSalvar.setText("Salvar");
+        jButtonEditarSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonEditarCancelar.setText("Cancelar");
+        jButtonEditarCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jInternalFrameEditarCadastroLayout = new javax.swing.GroupLayout(jInternalFrameEditarCadastro.getContentPane());
+        jInternalFrameEditarCadastro.getContentPane().setLayout(jInternalFrameEditarCadastroLayout);
+        jInternalFrameEditarCadastroLayout.setHorizontalGroup(
+            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(31, 31, 31)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                        .addComponent(jButtonEditarSalvar)
+                        .addGap(44, 44, 44)
+                        .addComponent(jButtonEditarCancelar))
+                    .addComponent(jTextFieldEditarPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEditarID, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jInternalFrameEditarCadastroLayout.setVerticalGroup(
+            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextFieldEditarID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextFieldEditarPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEditarSalvar)
+                    .addComponent(jButtonEditarCancelar))
+                .addGap(16, 16, 16))
+        );
 
         jInternalFrameCadastroProduto.setTitle("Cadastro de Produtos");
         jInternalFrameCadastroProduto.setVisible(true);
@@ -175,6 +252,12 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFramePesquisarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonPesquisarConfirmar)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonPesquisarCancelar)
+                .addGap(27, 27, 27))
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,17 +268,12 @@ public class GUIMenu extends javax.swing.JFrame {
                     .addComponent(jComboBoxPesquisarAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPesquisarID, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFramePesquisarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonPesquisarConfirmar)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonPesquisarCancelar)
-                .addGap(27, 27, 27))
         );
         jInternalFramePesquisarLayout.setVerticalGroup(
             jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -211,6 +289,7 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(0, 20, Short.MAX_VALUE))
         );
 
+        jDesktopPane1.setLayer(jInternalFrameEditarCadastro, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameCadastroProduto, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFramePesquisar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -227,6 +306,11 @@ public class GUIMenu extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(343, Short.MAX_VALUE))
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(485, 485, 485)
+                    .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(486, Short.MAX_VALUE)))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +319,12 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(156, 156, 156)
                 .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                    .addGap(460, 460, 460)
+                    .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(460, Short.MAX_VALUE)))
         );
 
         jMenuCadastro.setText("Cadastro");
@@ -253,6 +342,11 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenuEdicao.setText("Edição");
 
         jMenuItemEdicaoProduto.setText("Produto");
+        jMenuItemEdicaoProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEdicaoProdutoActionPerformed(evt);
+            }
+        });
         jMenuEdicao.add(jMenuItemEdicaoProduto);
 
         jMenuBarPrincipal.add(jMenuEdicao);
@@ -370,22 +464,28 @@ public class GUIMenu extends javax.swing.JFrame {
           
            int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
              System.out.println("ID Informado: "+idPesquisar);
-          
-        if (opcao.equals("Excluir")){
-                  try {
-                      produto.deletar(idPesquisar);
+             if (opcao.equals("Excluir")){
+              try {
+               produto.deletar(idPesquisar);
+               JOptionPane.showMessageDialog(rootPane, "Produto deletado com sucesso.");
                   } catch (SQLException ex) {
-                      Logger.getLogger(GUIMenu.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-            JOptionPane.showMessageDialog(rootPane,"O produto de ID: " +idPesquisar+ " Foi Excluido com Sucesso!");
-            
-           
-            jComboBoxPesquisarAcao.setSelectedIndex(0);
-            jTextFieldPesquisarID.setText("");
-            jInternalFramePesquisar.setVisible(false);
+                   JOptionPane.showMessageDialog(rootPane, "Erro ao deletar produto: " + ex.getMessage());
+}                JOptionPane.showMessageDialog(rootPane,"O produto de ID: " +idPesquisar+ " Foi Excluido com Sucesso!");
+                      
+                jComboBoxPesquisarAcao.setSelectedIndex(0);
+                jTextFieldPesquisarID.setText("");
+                jInternalFramePesquisar.setVisible(false);
         }else {
+             jInternalFramePesquisar.setVisible(false);
+             jInternalFrameEditarCadastro.setVisible(true);
              
-        }       
+             Produto produtoRecuperado = produto.buscarPorid(idPesquisar);
+             
+             jTextFieldEditarID.setText(idPesquisar+"");
+             jTextFieldEditarNome.setText(produtoRecuperado.getNome());
+             jTextFieldEditarPreco.setText(produtoRecuperado.getPreco()+"");
+             jInternalFrameEditarCadastro.setVisible(true);
+;       }       
     }//GEN-LAST:event_jButtonPesquisarConfirmarActionPerformed
 
     private void jButtonPesquisarCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarCancelarActionPerformed
@@ -394,7 +494,67 @@ public class GUIMenu extends javax.swing.JFrame {
         jComboBoxPesquisarAcao.setSelectedIndex(0);
         jInternalFramePesquisar.setVisible(false);
     }//GEN-LAST:event_jButtonPesquisarCancelarActionPerformed
-      
+
+    private void jButtonEditarSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarSalvarActionPerformed
+     try {
+        // 1. Pega os dados digitados nos campos
+        int id = Integer.parseInt(jTextFieldEditarID.getText());
+        String nome = jTextFieldEditarNome.getText();
+        double preco = Double.parseDouble(jTextFieldEditarPreco.getText());
+
+        // 2. Chama o método de edição da classe Produto
+        Produto produto = new Produto();
+        produto.editar(nome, preco, id);
+
+        // 3. Mensagem de sucesso
+        JOptionPane.showMessageDialog(this, "Produto atualizado com sucesso!");
+
+         jTextFieldEditarID.setText("");
+        jTextFieldEditarNome.setText("");
+        jTextFieldEditarPreco.setText("");
+        jInternalFrameEditarCadastro.setVisible(false);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Preço ou ID inválido. Verifique os campos e se tiver virgula troque por ponto.");
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Erro ao editar o produto.");
+    }
+
+     
+    }//GEN-LAST:event_jButtonEditarSalvarActionPerformed
+
+    private void jButtonEditarCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarCancelarActionPerformed
+        // TODO add your handling code here:
+        jTextFieldEditarID.setText("");
+        jTextFieldEditarNome.setText("");
+        jTextFieldEditarPreco.setText("");
+        
+        jInternalFrameEditarCadastro.setVisible(false);
+    }//GEN-LAST:event_jButtonEditarCancelarActionPerformed
+
+    private void jMenuItemEdicaoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEdicaoProdutoActionPerformed
+                 String nome = JOptionPane.showInputDialog("Informe o Nome");
+            Produto produto = new Produto();
+            ArrayList<Produto> produtos = produto.pesquisar(nome);
+            
+           DefaultTableModel modelo = new DefaultTableModel();
+            modelo.addColumn("ID");
+            modelo.addColumn("nome");
+            modelo.addColumn("preco");
+            
+            for (Produto produtoAux: produtos){
+                modelo.addRow(new Object[]{produtoAux.getId(), produtoAux.getNome(), produtoAux.getPreco()});
+                jTablePesquisarPorNome.setModel(modelo);
+                
+            }
+            jInternalFramePesquisar.setVisible(true);
+       
+    }//GEN-LAST:event_jMenuItemEdicaoProdutoActionPerformed
+          public JInternalFrame getJInternalFrameEditarCadastro(){
+              return jInternalFrameEditarCadastro;
+          }  
+    
+    
       public JInternalFrame getJInternalFrameCadastroProduto(){
       return jInternalFrameCadastroProduto;
         }
@@ -405,14 +565,20 @@ public class GUIMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroProdutoCancelar;
     private javax.swing.JButton jButtonCadastroProdutoSalvar;
+    private javax.swing.JButton jButtonEditarCancelar;
+    private javax.swing.JButton jButtonEditarSalvar;
     private javax.swing.JButton jButtonPesquisarCancelar;
     private javax.swing.JButton jButtonPesquisarConfirmar;
     private javax.swing.JComboBox<String> jComboBoxPesquisarAcao;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrameCadastroProduto;
+    private javax.swing.JInternalFrame jInternalFrameEditarCadastro;
     private javax.swing.JInternalFrame jInternalFramePesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelCadastroProdutoNome;
     private javax.swing.JLabel jLabelCadastroProdutoPreco;
     private javax.swing.JMenuBar jMenuBarPrincipal;
@@ -428,6 +594,9 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JTable jTablePesquisarPorNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoPreco;
+    private javax.swing.JTextField jTextFieldEditarID;
+    private javax.swing.JTextField jTextFieldEditarNome;
+    private javax.swing.JTextField jTextFieldEditarPreco;
     private javax.swing.JTextField jTextFieldPesquisarID;
     // End of variables declaration//GEN-END:variables
 }

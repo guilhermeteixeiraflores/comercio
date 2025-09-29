@@ -40,6 +40,7 @@ public class Comercio {
                   janelaPrincipal.setVisible(true);
                   janelaPrincipal.getJInternalFrameCadastroProduto().setVisible(false);
                   janelaPrincipal.getJInternalFramePesquisar().setVisible(false);
+                  janelaPrincipal.getJInternalFrameEditarCadastro().setVisible(false);
               }
               } );  
                       }

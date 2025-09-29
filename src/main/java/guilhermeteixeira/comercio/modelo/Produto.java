@@ -6,7 +6,9 @@ package guilhermeteixeira.comercio.modelo;
 
 import guilhermeteixeira.comercio.controle.Banco;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -54,6 +56,7 @@ public class Produto {
         return preco;
     }
 
+
     /**
      * @param preco the preco to set
      */
@@ -83,8 +86,14 @@ public class Produto {
                 Connection conexao = b.conectar();
                 b.deletar(id);
             }
+      public void editar(String nome, double preco, int id){
+            Banco b = new Banco();
+             Connection conexao = b.conectar();
+             b.editar(nome, preco, id); // Usa os dados NOVOS recebidos como parâmetro
+}
 
-    /**
+           
+    /**      
      * @return the id
      */
     public int getId() {
@@ -97,4 +106,15 @@ public class Produto {
     public void setId(int id) {
         this.id = id;
     }
-}
+
+  public Produto buscarPorid(int idPesquisar) {
+    Banco b = new Banco();
+    Connection conexao = b.conectar();
+    Produto produto = b.buscarPorId(idPesquisar);
+    return produto;
+}    }
+
+       
+
+
+     
