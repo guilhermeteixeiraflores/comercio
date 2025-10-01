@@ -4,6 +4,7 @@
  */
 package guilhermeteixeira.comercio.view;
 
+import guilhermeteixeira.comercio.modelo.Carrinho;
 import guilhermeteixeira.comercio.modelo.Produto;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -273,8 +274,8 @@ public class GUIMenu extends javax.swing.JFrame {
                         .addGap(27, 27, 27))
                     .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                         .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxPesquisarAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPesquisarID, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldPesquisarID, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxPesquisarAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jInternalFramePesquisarLayout.setVerticalGroup(
@@ -470,6 +471,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private void jButtonPesquisarConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarConfirmarActionPerformed
              // TODO add your handling code here:
               Produto produto = new Produto();
+              Carrinho carrinho = new Carrinho();
         String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
           System.out.println("Opção selecionada:"+ opcao);
           
@@ -481,11 +483,12 @@ public class GUIMenu extends javax.swing.JFrame {
                   } catch (SQLException ex) {
                       Logger.getLogger(GUIMenu.class.getName()).log(Level.SEVERE, null, ex);
                   }
-               JOptionPane.showMessageDialog(rootPane, "Produto deletado com sucesso.");
+               JOptionPane.showMessageDialog(rootPane, "O Produto de ID: "+idPesquisar+" Foi Excluido com sucesso.");
                  
             
                 jComboBoxPesquisarAcao.setSelectedIndex(0);
                 jTextFieldPesquisarID.setText("");
+                jTextFieldPesquisarQuantidade.setText("");
                 jInternalFramePesquisar.setVisible(false);
              }else if (opcao.equals("Editar")){
              jInternalFramePesquisar.setVisible(false);
@@ -496,10 +499,16 @@ public class GUIMenu extends javax.swing.JFrame {
              jTextFieldEditarNome.setText(produtoRecuperado.getNome());
              jTextFieldEditarPreco.setText(produtoRecuperado.getPreco()+"");
              jInternalFrameEditarCadastro.setVisible(true);
-             }else if (opcao.equals("Adiconar No Carrinho")){   //sadiconar no carrinho
+             }else if (opcao.equals("Adicionar No Carrinho")){   //sadiconar no carrinho
+                 int id = Integer.parseInt(jTextFieldPesquisarID.getText());
+                 int quantidade = Integer.parseInt(jTextFieldPesquisarQuantidade.getText());
+                 
+                   produto.adicionarCarrinho(id, quantidade);
+                 
                 JOptionPane.showMessageDialog(rootPane," O Produto foi Adicionado no Carrinho!");
                 jTextFieldPesquisarID.setText("");
                 jComboBoxPesquisarAcao.setSelectedIndex(0);
+                jTextFieldPesquisarQuantidade.setText("");
                   jInternalFramePesquisar.setVisible(false);
 ;       }       
     }//GEN-LAST:event_jButtonPesquisarConfirmarActionPerformed

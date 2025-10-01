@@ -57,6 +57,8 @@ public class Banco {
                  System.out.println("O Produto Foi Salvo com Sucesso!");
              }
              
+             stmt.close();
+             conexao.close();
         } catch(SQLException e) {
             System.out.println("O Produto Não Foi Salvo !");
         }
@@ -214,5 +216,26 @@ public class Banco {
              }
               return produtoEncontrado;
                }
+              public void adicionarCarrinho(Produto produto, int quantidade, Connection conexao){
+        String sql = "INSERT INTO carrinho(nome, preco, quantidade) VALUES(?, ?, ?)";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            
+             stmt.setString(1, produto.getNome());
+             stmt.setDouble(2, produto.getPreco());
+             stmt.setInt(3, quantidade);
+             
+             int linhasAfetadas = stmt.executeUpdate();
+             
+             if (linhasAfetadas > 0){
+                 System.out.println("O Produto Foi Salvo No Carrinho com Sucesso!");
+             }
+             
+             stmt.close();
+             conexao.close();
+        } catch(SQLException e) {
+            System.out.println("O Produto Não Foi Salvo no Carrinho do banco de dados !");
+        }
          }
+}
 

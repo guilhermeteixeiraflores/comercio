@@ -3,6 +3,7 @@
 package guilhermeteixeira.comercio;
 
 import guilhermeteixeira.comercio.controle.Banco;
+import guilhermeteixeira.comercio.modelo.Carrinho;
 import guilhermeteixeira.comercio.modelo.Produto;
 import guilhermeteixeira.comercio.view.GUIMenu;
 import java.sql.Connection;
@@ -23,6 +24,7 @@ public class Comercio {
       }
 }*/
           public static void main (String args[]){
+              Carrinho carrinho = new Carrinho();
               GUIMenu janelaPrincipal = new GUIMenu();
                Banco b = new Banco();
                 b.inicializarBanco();

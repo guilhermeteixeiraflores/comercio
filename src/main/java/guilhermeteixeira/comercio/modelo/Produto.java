@@ -16,6 +16,13 @@ import java.util.ArrayList;
  * @author GUILHERME
  */
 public class Produto {
+
+    public static Produto buscarPorId(int idPesquisar) {
+    Banco b = new Banco();
+    Connection conexao = b.conectar();
+    Produto produto = b.buscarPorId(idPesquisar);
+    return produto;
+}
     private int id;
     private String nome;
     private double preco;
@@ -112,7 +119,15 @@ public class Produto {
     Connection conexao = b.conectar();
     Produto produto = b.buscarPorId(idPesquisar);
     return produto;
-}    }
+}   
+     public void adicionarCarrinho(int id, int quantidade){
+        Produto produto = buscarPorId(id);
+        Banco b = new Banco();
+        Connection conexao = b.conectar();
+        b.adicionarCarrinho(produto, quantidade, conexao);
+        
+     }
+}
 
        
 
