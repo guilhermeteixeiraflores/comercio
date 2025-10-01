@@ -237,5 +237,8 @@ public class Banco {
             System.out.println("O Produto Não Foi Salvo no Carrinho do banco de dados !");
         }
          }
+              public ArrayList<Produto> buscarCarrinho(){
+                  return null;
+              }
 }
 

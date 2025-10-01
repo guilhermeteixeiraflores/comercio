@@ -127,6 +127,13 @@ public class Produto {
         b.adicionarCarrinho(produto, quantidade, conexao);
         
      }
+     public ArrayList<Produto> recuperarCarrinho(){
+         Banco b = new Banco();
+        Connection conexao = b.conectar();
+        ArrayList<Produto> produtos = b.buscarCarrinho();
+        return produtos;
+        
+     }
 }
 
        

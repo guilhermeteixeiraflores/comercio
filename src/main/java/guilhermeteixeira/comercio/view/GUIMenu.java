@@ -38,6 +38,13 @@ public class GUIMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jInternalFrameCarrinho = new javax.swing.JInternalFrame();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableCarrinho = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldCarrinhoTotal = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jInternalFrameEditarCadastro = new javax.swing.JInternalFrame();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldEditarNome = new javax.swing.JTextField();
@@ -77,6 +84,67 @@ public class GUIMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro e Venda de Produtos");
+
+        jInternalFrameCarrinho.setTitle("Carrinho");
+        jInternalFrameCarrinho.setVisible(true);
+
+        jTableCarrinho.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTableCarrinho);
+
+        jLabel6.setText("Total R$");
+
+        jTextFieldCarrinhoTotal.setEditable(false);
+
+        jButton1.setText("Pagar");
+
+        jButton2.setText("Cancelar");
+
+        javax.swing.GroupLayout jInternalFrameCarrinhoLayout = new javax.swing.GroupLayout(jInternalFrameCarrinho.getContentPane());
+        jInternalFrameCarrinho.getContentPane().setLayout(jInternalFrameCarrinhoLayout);
+        jInternalFrameCarrinhoLayout.setHorizontalGroup(
+            jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(26, 26, 26)
+                        .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(21, 21, 21))
+        );
+        jInternalFrameCarrinhoLayout.setVerticalGroup(
+            jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(23, 23, 23))
+        );
 
         jInternalFrameEditarCadastro.setTitle("Edição De Cadastros");
         jInternalFrameEditarCadastro.setVisible(true);
@@ -255,7 +323,7 @@ public class GUIMenu extends javax.swing.JFrame {
             jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
@@ -292,15 +360,17 @@ public class GUIMenu extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldPesquisarID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPesquisarQuantidade)
-                    .addComponent(jTextFieldPesquisarQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonPesquisarConfirmar)
-                        .addComponent(jButtonPesquisarCancelar)))
+                        .addComponent(jButtonPesquisarCancelar))
+                    .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelPesquisarQuantidade)
+                        .addComponent(jTextFieldPesquisarQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
 
+        jDesktopPane1.setLayer(jInternalFrameCarrinho, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameEditarCadastro, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameCadastroProduto, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFramePesquisar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -315,9 +385,11 @@ public class GUIMenu extends javax.swing.JFrame {
                         .addGap(95, 95, 95)
                         .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                        .addContainerGap()
+                        .addComponent(jInternalFrameCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
                         .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(780, Short.MAX_VALUE))
+                .addContainerGap(0, Short.MAX_VALUE))
             .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jDesktopPane1Layout.createSequentialGroup()
                     .addGap(485, 485, 485)
@@ -327,11 +399,16 @@ public class GUIMenu extends javax.swing.JFrame {
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jInternalFrameCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(160, 160, 160)
                 .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jDesktopPane1Layout.createSequentialGroup()
                     .addGap(460, 460, 460)
@@ -378,6 +455,11 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenuVendas.setText("Vendas");
 
         jMenuItemVendasCarrinho.setText("Carrinho");
+        jMenuItemVendasCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemVendasCarrinhoActionPerformed(evt);
+            }
+        });
         jMenuVendas.add(jMenuItemVendasCarrinho);
 
         jMenuBarPrincipal.add(jMenuVendas);
@@ -575,6 +657,29 @@ public class GUIMenu extends javax.swing.JFrame {
             jInternalFramePesquisar.setVisible(true);
        
     }//GEN-LAST:event_jMenuItemEdicaoProdutoActionPerformed
+
+    private void jMenuItemVendasCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVendasCarrinhoActionPerformed
+        // TODO add your handling code here:
+        
+            Produto produto = new Produto();
+            ArrayList<Produto> produtos = produto.recuperarCarrinho();
+            
+           DefaultTableModel modelo = new DefaultTableModel();
+            modelo.addColumn("ID");
+            modelo.addColumn("nome");
+            modelo.addColumn("preco");
+            
+            int total = 0;
+            for (Produto produtoAux: produtos){
+                modelo.addRow(new Object[]{produtoAux.getId(), produtoAux.getNome(), produtoAux.getPreco()});
+                jTableCarrinho.setModel(modelo);
+                total+=produtoAux.getPreco();
+            }
+             jTextFieldCarrinhoTotal.setText(total+"");
+            jInternalFrameCarrinho.setVisible(true);
+       
+                                             
+    }//GEN-LAST:event_jMenuItemVendasCarrinhoActionPerformed
           public JInternalFrame getJInternalFrameEditarCadastro(){
               return jInternalFrameEditarCadastro;
           }  
@@ -588,6 +693,8 @@ public class GUIMenu extends javax.swing.JFrame {
          }
       
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCadastroProdutoCancelar;
     private javax.swing.JButton jButtonCadastroProdutoSalvar;
     private javax.swing.JButton jButtonEditarCancelar;
@@ -597,6 +704,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxPesquisarAcao;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrameCadastroProduto;
+    private javax.swing.JInternalFrame jInternalFrameCarrinho;
     private javax.swing.JInternalFrame jInternalFrameEditarCadastro;
     private javax.swing.JInternalFrame jInternalFramePesquisar;
     private javax.swing.JLabel jLabel1;
@@ -604,6 +712,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelCadastroProdutoNome;
     private javax.swing.JLabel jLabelCadastroProdutoPreco;
     private javax.swing.JLabel jLabelPesquisarQuantidade;
@@ -617,9 +726,12 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuPesquisar;
     private javax.swing.JMenu jMenuVendas;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableCarrinho;
     private javax.swing.JTable jTablePesquisarPorNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoPreco;
+    private javax.swing.JTextField jTextFieldCarrinhoTotal;
     private javax.swing.JTextField jTextFieldEditarID;
     private javax.swing.JTextField jTextFieldEditarNome;
     private javax.swing.JTextField jTextFieldEditarPreco;
