@@ -43,6 +43,7 @@ public class Comercio {
                   janelaPrincipal.getJInternalFrameCadastroProduto().setVisible(false);
                   janelaPrincipal.getJInternalFramePesquisar().setVisible(false);
                   janelaPrincipal.getJInternalFrameEditarCadastro().setVisible(false);
+                  janelaPrincipal.getJInternalFrameCarrinho().setVisible(false);
               }
               } );  
                       }
