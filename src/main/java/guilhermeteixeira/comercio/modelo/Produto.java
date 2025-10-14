@@ -19,26 +19,19 @@ import java.util.Map;
  */
 public class Produto {
 
-    private double valorCompra;
-   private String fornecedor;
-   private String telefoneForne;    
-    private int id;
+   private int id;
     private String nome;
+    private double valorCompra;
+    private int estoque; //GuilhermeTeixeiraFlores
+    private String fornecedor;
+    private String telefoneForne;
     private double preco;
     
-    
-     public Produto(String nome1, double valorCompra1, String fornecedor1, String telefone, double preco1){
-        this.id = 0;
-        this.nome = nome1;
-        this.valorCompra = valorCompra1;
-        this.fornecedor = fornecedor1;
-        this.telefoneForne = telefone;
-        this.preco = preco1;
-    }
-    
-     public Produto(double valorCompra, String fornecedor, String telefoneForne, String nome, double preco){
+         
+     public Produto(String fornecedor, double valorCompra, int estoque, String telefoneForne, String nome, double preco){
          this.id = 0;
          this.valorCompra = valorCompra;
+         this.estoque = estoque;          
          this.fornecedor = fornecedor;
          this.telefoneForne = telefoneForne;
          this.nome = nome;
@@ -48,10 +41,11 @@ public class Produto {
        public Produto() {
         this.id = 0;
         this.nome = "";
-        this.preco = 0.0;
+        this.estoque = 0;
         this.valorCompra = 0.0;
         this.fornecedor = "";
         this.telefoneForne = "";
+         this.preco = 0.0;
     }
     /**
      * @return the nome
@@ -66,7 +60,9 @@ public class Produto {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+ public void getestoque(int estoque) {
+        this.estoque = estoque;
+    }
     /**
      * @return the preco
      */
@@ -88,6 +84,9 @@ public String getFornecedor() {
 public void setFornecedor(String fornecedor) {
     this.fornecedor = fornecedor;
 }
+ public void setestoque(int estoque) {
+        this.estoque = estoque;
+    }
 
 public String getTelefoneForne() {
     return telefoneForne;
@@ -104,14 +103,14 @@ public void setTelefoneForne(String telefoneForne) {
         this.preco = preco;
     }
     public void apresentarProduto(){
-        System.out.println("Nome: "+nome+",R$ "+valorCompra+" ,Fornecedor"+fornecedor+" ,TelefoneForne"+telefoneForne+",R$ "+preco+",ID:"+id);
+        System.out.println("Nome: "+nome+",R$ "+valorCompra+","+estoque+"Fornecedor: "+fornecedor+" ,TelefoneForne"+telefoneForne+",R$ "+preco+",ID:"+id);
     }
     
     
          public void salvar(String nome, double valorCompra, String fornecedor, String telefoneForne, Double preco){
                 Banco b = new Banco();
                 Connection conexao = b.conectar();
-                 b.salvar(nome, valorCompra, fornecedor, telefoneForne, preco, conexao);
+                 b.salvar(nome, valorCompra, estoque, fornecedor, telefoneForne, preco, conexao);
 }
         
             public ArrayList<Produto> pesquisar(String nome){
@@ -126,10 +125,10 @@ public void setTelefoneForne(String telefoneForne) {
                 Connection conexao = b.conectar();
                 b.deletar(id);
             }
-          public void editar(String nome, double valorCompra, String fornecedor, String telefoneForne, double preco, int id){
+          public void editar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneForne, double preco, int id){
             Banco b = new Banco();
            Connection conexao = b.conectar();
-            b.editar(nome, valorCompra, fornecedor, telefoneForne, preco, id);
+            b.editar(nome, valorCompra, estoque, fornecedor, telefoneForne, preco, id);
 }
                 public Produto(String nome, double valorCompra, String fornecedor, String telefoneForne, double preco, int id) {
                  this.nome = nome;
@@ -152,8 +151,8 @@ public void setTelefoneForne(String telefoneForne) {
     public void setId(int id) {
         this.id = id;
     }
-
-  public Produto buscarPorId(int idPesquisar) {
+   
+    public Produto buscarPorId(int idPesquisar) {
     Banco b = new Banco();
     Connection conexao = b.conectar();
         Produto produto = b.buscarPorId(idPesquisar);
@@ -189,4 +188,12 @@ public void setTelefoneForne(String telefoneForne) {
         System.out.println("-------------------------------");
     }
 }
+
+    public int getEstoque() {
+    return this.estoque;
+}
+
+    public void adicionarCarrinho(Produto produtoSelecionado, int quantidade, Connection conexao) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }   

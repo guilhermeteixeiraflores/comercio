@@ -4,7 +4,8 @@ CREATE DATABASE IF NOT EXISTS comercio;
   CREATE TABLE IF NOT EXISTS produto(
  id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR (100)NOT NULL,
-valorCompra DOUBLE ,
+valorCompra DOUBLE,
+estoque INT NOT NULL,
 fornecedor VARCHAR(100),
 telefoneforne VARCHAR(16),
 preco DOUBLE NOT NULL

@@ -28,6 +28,7 @@ public class GUIMenu extends javax.swing.JFrame {
     // Declarar as variáveis aqui
     private String nome;
     private double valorCompra;
+    private int estoque;
     private String fornecedor;
     private String telefone;
     private double preco;
@@ -68,6 +69,8 @@ public class GUIMenu extends javax.swing.JFrame {
         jTextFieldEditarFornecedor = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jTextFieldEditarTelefoneForne = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextFieldEditarEstoque = new javax.swing.JTextField();
         jInternalFrameCadastroProduto = new javax.swing.JInternalFrame();
         jLabelCadastroProdutoNome = new javax.swing.JLabel();
         jTextFieldCadastroProdutoNome = new javax.swing.JTextField();
@@ -81,6 +84,8 @@ public class GUIMenu extends javax.swing.JFrame {
         jTextFieldCadastroProdutoFornecedor = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldCadastroProdutoTelefoneFornecedor = new javax.swing.JTextField();
+        jTextFieldCadastroProdutoEstoque = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jInternalFramePesquisar = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePesquisarPorNome = new javax.swing.JTable();
@@ -207,6 +212,10 @@ public class GUIMenu extends javax.swing.JFrame {
 
         jLabel12.setText("Telefone/Fornecedor");
 
+        jLabel14.setText("Estoque");
+
+        jTextFieldEditarEstoque.setText("jTextField1");
+
         javax.swing.GroupLayout jInternalFrameEditarCadastroLayout = new javax.swing.GroupLayout(jInternalFrameEditarCadastro.getContentPane());
         jInternalFrameEditarCadastro.getContentPane().setLayout(jInternalFrameEditarCadastroLayout);
         jInternalFrameEditarCadastroLayout.setHorizontalGroup(
@@ -232,9 +241,14 @@ public class GUIMenu extends javax.swing.JFrame {
                                     .addComponent(jTextFieldEditarID, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
                                 .addGap(32, 32, 32)
-                                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldEditarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                                        .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldEditarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEditarCadastroLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -260,7 +274,9 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextFieldEditarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -313,6 +329,8 @@ public class GUIMenu extends javax.swing.JFrame {
 
         jLabel9.setText("Telefone Fornec.");
 
+        jLabel13.setText("Estoque");
+
         javax.swing.GroupLayout jInternalFrameCadastroProdutoLayout = new javax.swing.GroupLayout(jInternalFrameCadastroProduto.getContentPane());
         jInternalFrameCadastroProduto.getContentPane().setLayout(jInternalFrameCadastroProdutoLayout);
         jInternalFrameCadastroProdutoLayout.setHorizontalGroup(
@@ -337,7 +355,12 @@ public class GUIMenu extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldCadastroProdutoPrecoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                                .addComponent(jTextFieldCadastroProdutoPrecoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel13)
+                                .addGap(32, 32, 32)
+                                .addComponent(jTextFieldCadastroProdutoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextFieldCadastroProdutoNome)
                             .addComponent(jTextFieldCadastroProdutoFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                             .addComponent(jTextFieldCadastroProdutoTelefoneFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -353,7 +376,9 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldCadastroProdutoPrecoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jTextFieldCadastroProdutoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -420,7 +445,7 @@ public class GUIMenu extends javax.swing.JFrame {
             jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
@@ -446,9 +471,9 @@ public class GUIMenu extends javax.swing.JFrame {
         jInternalFramePesquisarLayout.setVerticalGroup(
             jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(64, 64, 64)
                 .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jComboBoxPesquisarAcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -592,6 +617,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private void jButtonCadastroProdutoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroProdutoCancelarActionPerformed
        jTextFieldCadastroProdutoNome.setText("");
        jTextFieldCadastroProdutoPrecoCompra.setText("");
+       jTextFieldCadastroProdutoEstoque.setText("");
        jTextFieldCadastroProdutoFornecedor.setText("");
        jTextFieldCadastroProdutoTelefoneFornecedor.setText("");
        jTextFieldCadastroProdutoPreco.setText("");
@@ -601,18 +627,25 @@ public class GUIMenu extends javax.swing.JFrame {
     private void jButtonCadastroProdutoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroProdutoSalvarActionPerformed
             String nome = jTextFieldCadastroProdutoNome.getText();
             String precoStr = jTextFieldCadastroProdutoPreco.getText();
+            String estoqueStr = jTextFieldCadastroProdutoEstoque.getText();
             String valorCompraStr = jTextFieldCadastroProdutoPrecoCompra.getText();
             String fornecedor = jTextFieldCadastroProdutoFornecedor.getText();
             String telefone = jTextFieldCadastroProdutoTelefoneFornecedor.getText();
 
-if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || fornecedor.isEmpty() || telefone.isEmpty()) {
+if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || estoqueStr.isEmpty() || fornecedor.isEmpty() || telefone.isEmpty()) {
     JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
 } else {
     try {
         double preco = Double.parseDouble(precoStr);
         double valorCompra = Double.parseDouble(valorCompraStr);
-
-        Produto produto = new Produto(nome, valorCompra, fornecedor, telefone, preco);
+        int estoque;
+        try{
+            estoque = Integer.parseInt(estoqueStr);
+           } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(this, " O Campo Estoque deve converter apenas Números Inteiros.");
+            return;
+        }
+        Produto produto = new Produto(nome, valorCompra, estoque, fornecedor, telefone, preco);
 
         Banco b = new Banco();
         Connection conexao = b.conectar();
@@ -621,6 +654,7 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
         jTextFieldCadastroProdutoNome.setText("");
         jTextFieldCadastroProdutoPreco.setText("");
         jTextFieldCadastroProdutoPrecoCompra.setText("");
+        jTextFieldCadastroProdutoEstoque.setText("");
         jTextFieldCadastroProdutoFornecedor.setText("");
         jTextFieldCadastroProdutoTelefoneFornecedor.setText("");
 
@@ -640,13 +674,14 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
     private void jMenuItemPesquisarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarProdutoActionPerformed
                          // TODO add your handling code here:
          String nome = JOptionPane.showInputDialog("Informe o Nome");
-            Produto produto = new Produto(nome, valorCompra, fornecedor, telefone, preco);
+            Produto produto = new Produto(nome, valorCompra, estoque, fornecedor, telefone, preco);
             ArrayList<Produto> produtos = produto.pesquisar(nome);
             
            DefaultTableModel modelo = new DefaultTableModel();
             modelo.addColumn("ID");
             modelo.addColumn("Nome");
             modelo.addColumn("ValorCompra");
+             modelo.addColumn("Estoque");
             modelo.addColumn("Fornecedor");
             modelo.addColumn("Telefone");
             modelo.addColumn("Preco");
@@ -661,11 +696,12 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
 
     private void jButtonPesquisarConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarConfirmarActionPerformed
              // TODO add your handling code here:
-              Produto produto = new Produto(nome, valorCompra, fornecedor, telefone, preco);
+              Produto produto = new Produto(nome, valorCompra, estoque, fornecedor, telefone, preco);
               Carrinho carrinho = new Carrinho();
         String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
           System.out.println("Opção selecionada:"+ opcao);
-          
+            
+                  isEmpty();
            int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
              System.out.println("ID Informado: "+idPesquisar);
              if (opcao.equals("Excluir")){
@@ -713,13 +749,14 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
         int id = Integer.parseInt(jTextFieldEditarID.getText());
         String nome = jTextFieldEditarNome.getText();
         double valorCompra = Double.parseDouble(jTextFieldEditarValorCompra.getText());
+        int estoque = Integer.parseInt(jTextFieldEditarEstoque.getText());
         String fornecedor = jTextFieldEditarFornecedor.getText();
         String telefone = jTextFieldEditarTelefoneForne.getText();
         double preco = Double.parseDouble(jTextFieldEditarPreco.getText());
 
         // 2. Atualiza o produto chamando o método editar da classe Produto
         Produto produto = new Produto();
-        produto.editar(nome, valorCompra, fornecedor, telefone, preco, id);
+        produto.editar(nome, valorCompra, estoque, fornecedor, telefone, preco, id);
 
         // 3. Mensagem de sucesso
         JOptionPane.showMessageDialog(this, "Produto atualizado com sucesso!");
@@ -728,6 +765,7 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
         jTextFieldEditarID.setText("");
         jTextFieldEditarNome.setText("");
         jTextFieldEditarValorCompra.setText("");
+        jTextFieldEditarEstoque.setText("");
         jTextFieldEditarFornecedor.setText("");
         jTextFieldEditarTelefoneForne.setText("");
         jTextFieldEditarPreco.setText("");
@@ -750,9 +788,10 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
         jTextFieldEditarID.setText(String.valueOf(encontrado.getId()));
         jTextFieldEditarNome.setText(encontrado.getNome());
         jTextFieldEditarValorCompra.setText(String.valueOf(encontrado.getValorCompra()));
+        jTextFieldEditarEstoque.setText(String.valueOf(encontrado.getEstoque()));
         jTextFieldEditarFornecedor.setText(encontrado.getFornecedor());
         jTextFieldEditarTelefoneForne.setText(encontrado.getTelefoneForne());
-        jTextFieldEditarPreco.setText(String.valueOf(encontrado.getPreco()));
+        jTextFieldEditarPreco.setText(String.valueOf((char) encontrado.getPreco()));
     } else {
         JOptionPane.showMessageDialog(this, "Produto não encontrado!");
     }
@@ -762,6 +801,7 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
         jTextFieldEditarID.setText("");
         jTextFieldEditarNome.setText("");
         jTextFieldEditarValorCompra.setText("");
+        jTextFieldEditarEstoque.setText("");
         jTextFieldEditarFornecedor.setText("");
         jTextFieldEditarTelefoneForne.setText("");
         jTextFieldEditarPreco.setText("");
@@ -783,12 +823,13 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
             modelo.addColumn("ID");
             modelo.addColumn("Nome");
             modelo.addColumn("ValorCompra");
+            modelo.addColumn("Estoque");
             modelo.addColumn("Fonecedor");
             modelo.addColumn("TelefoneForne");
             modelo.addColumn("Preço");
 
             for (Produto p : produtos) {
-                modelo.addRow(new Object[]{p.getId(), p.getNome(), p.getValorCompra(), p.getFornecedor(), p.getTelefoneForne(), p.getPreco()});
+                modelo.addRow(new Object[]{p.getId(), p.getNome(), p.getValorCompra(), p.getEstoque(), p.getFornecedor(), p.getTelefoneForne(), p.getPreco()});
             }
 
             jTablePesquisarPorNome.setModel(modelo);
@@ -865,6 +906,8 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -889,12 +932,14 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableCarrinho;
     private javax.swing.JTable jTablePesquisarPorNome;
+    private javax.swing.JTextField jTextFieldCadastroProdutoEstoque;
     private javax.swing.JTextField jTextFieldCadastroProdutoFornecedor;
     private javax.swing.JTextField jTextFieldCadastroProdutoNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoPreco;
     private javax.swing.JTextField jTextFieldCadastroProdutoPrecoCompra;
     private javax.swing.JTextField jTextFieldCadastroProdutoTelefoneFornecedor;
     private javax.swing.JTextField jTextFieldCarrinhoTotal;
+    private javax.swing.JTextField jTextFieldEditarEstoque;
     private javax.swing.JTextField jTextFieldEditarFornecedor;
     private javax.swing.JTextField jTextFieldEditarID;
     private javax.swing.JTextField jTextFieldEditarNome;
@@ -904,4 +949,8 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || forneced
     private javax.swing.JTextField jTextFieldPesquisarID;
     private javax.swing.JTextField jTextFieldPesquisarQuantidade;
     // End of variables declaration//GEN-END:variables
+
+    private void isEmpty() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
