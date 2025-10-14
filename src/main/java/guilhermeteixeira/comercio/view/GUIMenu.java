@@ -686,7 +686,7 @@ if (nome.isEmpty() || precoStr.isEmpty() || valorCompraStr.isEmpty() || estoqueS
             modelo.addColumn("Telefone");
             modelo.addColumn("Preco");
             for (Produto produtoAux: produtos){
-                modelo.addRow(new Object[]{produtoAux.getId(), produtoAux.getNome(), produtoAux.getValorCompra(), produtoAux.getFornecedor(), produtoAux.getTelefoneForne(), produtoAux.getPreco(),});
+                modelo.addRow(new Object[]{produtoAux.getId(), produtoAux.getNome(), produtoAux.getValorCompra(), produtoAux.getEstoque(), produtoAux.getFornecedor(), produtoAux.getTelefoneForne(), produtoAux.getPreco(),});
                 jTablePesquisarPorNome.setModel(modelo);
                 
             }

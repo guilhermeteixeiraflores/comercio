@@ -88,12 +88,12 @@ public class Banco {
        }
 
        
-      public void salvar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneForne, double preco, Connection conexao) {
+      public void salvar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneforne, double preco, Connection conexao) {
     System.out.println("DEBUG salvar: nome=" + nome
         + ", valorCompra=" + valorCompra
         + ", estoque=" + estoque
         + ", fornecedor=" + fornecedor
-        + ", telefone=" + telefoneForne
+        + ", telefone=" + telefoneforne
         + ", preco=" + preco);
 
     String sql = "INSERT INTO produto(nome, valorCompra, estoque, fornecedor, telefoneforne, preco) VALUES (?, ?, ?, ?, ?, ?)";
@@ -103,14 +103,14 @@ public class Banco {
         stmt.setDouble(2, valorCompra);
         stmt.setInt(3, estoque);
         stmt.setString(4, fornecedor);
-        stmt.setString(5, telefoneForne);
+        stmt.setString(5, telefoneforne);
         stmt.setDouble(6, preco);
 
         int linhasAfetadas = stmt.executeUpdate();
         if (linhasAfetadas > 0) {
-            System.out.println("✅ Produto salvo com sucesso!");
+            System.out.println(" Produto salvo com sucesso!");
         } else {
-            System.out.println("⚠️ Nenhuma linha foi afetada!");
+            System.out.println(" Nenhuma linha foi afetada!");
         }
 
         stmt.close();
@@ -151,9 +151,9 @@ public void salvar(Produto produto, Connection conexao) {
                     double valorCompra = rs.getDouble("valorCompra");
                      int estoque = rs.getInt("estoque");
                     String fornecedor = rs.getString("fornecedor");
-                   String telefoneForne= rs.getString("telefoneForne");
+                   String telefoneforne= rs.getString("telefoneForne");
                     double preco = rs.getDouble("preco");
-                    Produto produto = new Produto(nome, valorCompra, estoque, fornecedor, telefoneForne,  preco);
+                    Produto produto = new Produto(nome, valorCompra, estoque, fornecedor, telefoneforne,  preco);
                     produto.setId(id);
                     listaDeProdutos.add(produto);
                     
@@ -193,9 +193,9 @@ public void salvar(Produto produto, Connection conexao) {
                
              
             
-         public void editar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneForne, double preco, int id) {
+         public void editar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneforne, double preco, int id) {
     
-         String sql = "UPDATE produto SET nome = ?, valorCompra = ?, estoque = ?, fornecedor = ?, telefoneForne = ?, preco = ? WHERE id = ?";
+         String sql = "UPDATE produto SET nome = ?, valorCompra = ?, estoque = ?, fornecedor = ?, telefoneforne = ?, preco = ? WHERE id = ?";
         try {
             Connection conexao = conectar();
         PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -203,7 +203,7 @@ public void salvar(Produto produto, Connection conexao) {
         stmt.setDouble(2, valorCompra);
         stmt.setInt(3, estoque);
         stmt.setString(4, fornecedor);
-        stmt.setString(5, telefoneForne);
+        stmt.setString(5, telefoneforne);
         stmt.setDouble(6, preco);
         stmt.setInt(7, id);
         int linhasAfetadas = stmt.executeUpdate();
@@ -232,10 +232,10 @@ public void salvar(Produto produto, Connection conexao) {
             double valorCompra = rs.getDouble("valorCompra");
             int estoque = rs.getInt("estoque");
             String fornecedor = rs.getString("fornecedor");
-            String telefoneForne = rs.getString("telefoneForne");
+            String telefoneforne = rs.getString("telefoneforne");
             double preco = rs.getDouble("preco");
 
-            produtoEncontrado = new Produto(nome, valorCompra, estoque, fornecedor, telefoneForne, preco);
+            produtoEncontrado = new Produto(nome, valorCompra, estoque, fornecedor, telefoneforne, preco);
             produtoEncontrado.setId(id);
           }
           rs.close();
