@@ -29,7 +29,7 @@ public class Comercio {
                Banco b = new Banco();
                 b.inicializarBanco();
                 
-                ArrayList<Produto> produtos = b.buscarPorTrechoNome("pastel");
+                ArrayList<Produto> produtos = b.buscarPorTrechoNome("");
                 
                 for(Produto produto: produtos){
                     produto.apresentarProduto();

@@ -21,17 +21,19 @@ import java.util.Map;
 
    private int id;
     private String nome;
-    private double valorCompra;
+    private String codigobarras;
+    private double valorcompra;
     private int estoque; //GuilhermeTeixeiraFlores
     private String fornecedor;
     private String telefoneforne;
     private double preco;
     
          
-     public Produto(String nome, double valorCompra, int estoque, String fornecedor,  String telefoneforne,  double preco){
+     public Produto(String nome, String codigobarras, double valorcompra, int estoque, String fornecedor,  String telefoneforne,  double preco){
          this.id = 0;
          this.nome = nome;
-         this.valorCompra = valorCompra;
+         this.codigobarras = codigobarras;
+         this.valorcompra = valorcompra;
          this.estoque = estoque;          
          this.fornecedor = fornecedor;
          this.telefoneforne = telefoneforne;
@@ -41,7 +43,8 @@ import java.util.Map;
        public Produto() {
         this.id = 0;
         this.nome = "";
-        this.valorCompra = 0.0;
+        this.codigobarras = "";
+        this.valorcompra = 0.0;
         this.estoque = 0;
         this.fornecedor = "";
         this.telefoneforne = "";
@@ -59,13 +62,19 @@ import java.util.Map;
     public void setNome(String nome) {
         this.nome = nome;
     }
+    public String getCodigoBarras() {
+        return codigobarras;
+    }
+      public void setCodigoBarras(String codigobarras) {
+        this.codigobarras = codigobarras;
+      }
           
     public double getValorCompra() {
-    return valorCompra;
+    return valorcompra;
 }
 
-public void setValorCompra(double valorCompra) {
-    this.valorCompra = valorCompra;
+public void setValorCompra(double valorcompra) {
+    this.valorcompra = valorcompra;
 }
     
      public void getestoque(int estoque) {
@@ -103,14 +112,14 @@ public void setTelefoneForne(String telefoneForne) {
         this.preco = preco;
     }
     public void apresentarProduto(){
-        System.out.println("Nome: "+nome+",R$ "+valorCompra+","+estoque+"Fornecedor: "+fornecedor+" ,TelefoneForne"+telefoneforne+",R$ "+preco+",ID:"+id);
+        System.out.println("Nome: "+nome+"Codigo"+codigobarras+ ",R$ "+valorcompra+","+estoque+"Fornecedor: "+fornecedor+" ,TelefoneForne"+telefoneforne+",R$ "+preco+",ID:"+id);
     }
     
     
-         public void salvar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneforne, double preco){
+         public void salvar(String nome, String codigobarras, double valorcompra, int estoque, String fornecedor, String telefoneforne, double preco){
                 Banco b = new Banco();
                 Connection conexao = b.conectar();
-                 b.salvar(nome, valorCompra, estoque, fornecedor, telefoneforne, preco, conexao);
+                 b.salvar(nome, codigobarras, valorcompra, estoque, fornecedor, telefoneforne, preco, conexao);
 }
         
             public ArrayList<Produto> pesquisar(String nome){
@@ -120,19 +129,26 @@ public void setTelefoneForne(String telefoneForne) {
                 
                 return produtos;
             }
+             public ArrayList<Produto> pesquisarPorCodigoBarras(String codigobarras) {
+                     Banco b = new Banco();
+               Connection conexao = b.conectar();
+             ArrayList<Produto> produtos = b.buscarPorCodigoBarras(codigobarras);
+                      return produtos;
+}
             public void deletar(int id) throws SQLException{
                   Banco b = new Banco();
                 Connection conexao = b.conectar();
                 b.deletar(id);
             }
-          public void editar(String nome, double valorCompra, int estoque, String fornecedor, String telefoneforne, double preco, int id){
+          public void editar(String nome, String codigobarras, double valorcompra, int estoque, String fornecedor, String telefoneforne, double preco, int id){
             Banco b = new Banco();
            Connection conexao = b.conectar();
-            b.editar(nome, valorCompra, estoque, fornecedor, telefoneforne, preco, id);
+            b.editar(nome, codigobarras, valorcompra, estoque, fornecedor, telefoneforne, preco, id);
 }
-                public Produto(String nome, double valorCompra, int estoque, String fornecedor, String telefoneforne, double preco, int id) {
+                public Produto(String nome, String codigobarras, double valorcompra, int estoque, String fornecedor, String telefoneforne, double preco, int id) {
                  this.nome = nome;
-                 this.valorCompra = valorCompra;
+                 this.codigobarras = codigobarras;
+                 this.valorcompra = valorcompra;
                  this.estoque = estoque;
                  this.fornecedor = fornecedor;
                  this.telefoneforne = telefoneforne;
