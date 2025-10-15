@@ -623,7 +623,7 @@
         </Container>
         <Container class="javax.swing.JInternalFrame" name="jInternalFramePesquisar">
           <Properties>
-            <Property name="title" type="java.lang.String" value="  Nessa Tela de Pesquisa      Pode Excluir um Tipo de  Produto     Pode Editar Itens ou Cadastros     Ou sair em Cancelar"/>
+            <Property name="title" type="java.lang.String" value="  Nessa Tela de Pesquisa   Pode Excluir um Tipo de  Produto    Editar Abre a Janela para Edi&#xe7;&#xe3;o de Campo ou Item     Ou Cancelar e Sair"/>
             <Property name="visible" type="boolean" value="true"/>
           </Properties>
 

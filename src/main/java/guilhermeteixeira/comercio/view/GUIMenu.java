@@ -421,7 +421,7 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        jInternalFramePesquisar.setTitle("  Nessa Tela de Pesquisa      Pode Excluir um Tipo de  Produto     Pode Editar Itens ou Cadastros     Ou sair em Cancelar");
+        jInternalFramePesquisar.setTitle("  Nessa Tela de Pesquisa   Pode Excluir um Tipo de  Produto    Editar Abre a Janela para Edição de Campo ou Item     Ou Cancelar e Sair");
         jInternalFramePesquisar.setVisible(true);
 
         jTablePesquisarPorNome.setModel(new javax.swing.table.DefaultTableModel(
@@ -727,8 +727,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
         String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
           System.out.println("Opção selecionada:"+ opcao);
             
-                  isEmpty();
-           int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
+             int idPesquisar = Integer.parseInt(jTextFieldPesquisarID.getText());
              System.out.println("ID Informado: "+idPesquisar);
              if (opcao.equals("Excluir")){
                   try {
@@ -738,27 +737,27 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
                   }
                JOptionPane.showMessageDialog(rootPane, "O Produto de ID: "+idPesquisar+" Foi Excluido com sucesso.");
                  
-            
+               
                 jComboBoxPesquisarAcao.setSelectedIndex(0);
                 jTextFieldPesquisarID.setText("");
-                jTextFieldPesquisarQuantidade.setText("");
+             //   jTextFieldPesquisarQuantidade.setText("");
                 jInternalFramePesquisar.setVisible(false);
              }else if (opcao.equals("Editar")){
                jInternalFramePesquisar.setVisible(false);
            carregarCamposParaEdicao(idPesquisar); // <-- AQUI VOCÊ CHAMA O MÉTODO COMPLETO
            jInternalFrameEditarCadastro.setVisible(true);
 
-             }else if (opcao.equals("Adicionar No Carrinho")){   //sadiconar no carrinho
-                 int id = Integer.parseInt(jTextFieldPesquisarID.getText());
-                 int quantidade = Integer.parseInt(jTextFieldPesquisarQuantidade.getText());
+            // }else if (opcao.equals("Adicionar No Carrinho")){   //sadiconar no carrinho
+              //   int id = Integer.parseInt(jTextFieldPesquisarID.getText());
+              //   int quantidade = Integer.parseInt(jTextFieldPesquisarQuantidade.getText());
                  
-                   produto.adicionarCarrinho(id, quantidade);
+              //     produto.adicionarCarrinho(id, quantidade);
                  
-                JOptionPane.showMessageDialog(rootPane," O Produto foi Adicionado no Carrinho!");
-                jTextFieldPesquisarID.setText("");
-                jComboBoxPesquisarAcao.setSelectedIndex(0);
-                jTextFieldPesquisarQuantidade.setText("");
-                  jInternalFramePesquisar.setVisible(false);
+              //  JOptionPane.showMessageDialog(rootPane," O Produto foi Adicionado no Carrinho!");
+              //  jTextFieldPesquisarID.setText("");
+              //  jComboBoxPesquisarAcao.setSelectedIndex(0);
+             //   jTextFieldPesquisarQuantidade.setText("");
+             //   jInternalFramePesquisar.setVisible(false);
        }       
     }//GEN-LAST:event_jButtonPesquisarConfirmarActionPerformed
 
@@ -917,7 +916,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
          public JInternalFrame getJInternalFrameCarrinho(){
              return jInternalFrameCarrinho;
          }
-      
+         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -983,7 +982,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTextField jTextFieldPesquisarQuantidade;
     // End of variables declaration//GEN-END:variables
 
-    private void isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   private boolean isEmpty() {
+    return jTextFieldCadastroProdutoCodigoBarras.getText().trim().isEmpty();
+}
 }

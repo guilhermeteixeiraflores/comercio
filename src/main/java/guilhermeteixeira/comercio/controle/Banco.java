@@ -172,15 +172,16 @@ public void salvar(Produto produto, Connection conexao) {
           
        }
        public void deletar(int id) throws SQLException{
-           try{ 
            String sql = "DELETE FROM produto WHERE id =?";
+          
+          try{ 
            Connection conexao = conectar();
            PreparedStatement stmt = conexao.prepareStatement(sql);
            stmt.setInt(1, id);
            
            int linhasAfetadas = stmt.executeUpdate();
            if (linhasAfetadas > 0){
-               System.out.println("O Produto de ID:" +id+ "Foi Excluido com sucesso!");
+               System.out.println("O Produto de ID:" +id+ "Foi Excluido com Sucesso!");
                 } else {
                 System.out.println("O Produto de ID:" +id+ "Não Foi Encontrado!");
            }
