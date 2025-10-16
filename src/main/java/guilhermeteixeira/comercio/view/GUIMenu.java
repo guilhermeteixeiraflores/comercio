@@ -48,6 +48,18 @@ public class GUIMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jInternalFrameAdicionarCarrinho = new javax.swing.JInternalFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableAdicionarProdutoNoCarrinho = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
+        jComboBoxAdicionarProdutoNoCarrinho = new javax.swing.JComboBox<>();
+        jLabelAdicionarNoCarrinho = new javax.swing.JLabel();
+        jTextFieldPesquisandoQuantidade = new javax.swing.JTextField();
+        jLabelEntradaProduto = new javax.swing.JLabel();
+        jTextFieldEntradaProduto = new javax.swing.JTextField();
+        jButtonProcurarProduto = new javax.swing.JButton();
+        jButtonConfirmarAdicionarParaCarrinho = new javax.swing.JButton();
+        jButtonCancelarAdicionarProdutoParaCarrinho = new javax.swing.JButton();
         jInternalFrameCarrinho = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableCarrinho = new javax.swing.JTable();
@@ -72,6 +84,8 @@ public class GUIMenu extends javax.swing.JFrame {
         jTextFieldEditarTelefoneForne = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextFieldEditarEstoque = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextFieldEditarCodigoBarras = new javax.swing.JTextField();
         jInternalFrameCadastroProduto = new javax.swing.JInternalFrame();
         jLabelCadastroProdutoNome = new javax.swing.JLabel();
         jTextFieldCadastroProdutoNome = new javax.swing.JTextField();
@@ -108,10 +122,129 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenuPesquisar = new javax.swing.JMenu();
         jMenuItemPesquisarProduto = new javax.swing.JMenuItem();
         jMenuVendas = new javax.swing.JMenu();
+        jMenuItemAdiconarNoCarrinho = new javax.swing.JMenuItem();
         jMenuItemVendasCarrinho = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro e Venda de Produtos");
+
+        jInternalFrameAdicionarCarrinho.setTitle("Adiconar Produtos Para Carrinho (VENDAS R$)");
+        jInternalFrameAdicionarCarrinho.setVisible(true);
+
+        jTableAdicionarProdutoNoCarrinho.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jTableAdicionarProdutoNoCarrinho.setCellSelectionEnabled(true);
+        jTableAdicionarProdutoNoCarrinho.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTableAdicionarProdutoNoCarrinhoAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(jTableAdicionarProdutoNoCarrinho);
+
+        jLabel17.setText("Registrar Vendas Por:");
+
+        jComboBoxAdicionarProdutoNoCarrinho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código de Barras", "ID", "Nome", " " }));
+        jComboBoxAdicionarProdutoNoCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxAdicionarProdutoNoCarrinhoActionPerformed(evt);
+            }
+        });
+
+        jLabelAdicionarNoCarrinho.setText("Quantidade");
+
+        jTextFieldPesquisandoQuantidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPesquisandoQuantidadeActionPerformed(evt);
+            }
+        });
+
+        jButtonProcurarProduto.setText("Procurar");
+        jButtonProcurarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProcurarProdutoActionPerformed(evt);
+            }
+        });
+
+        jButtonConfirmarAdicionarParaCarrinho.setText("Confirmar");
+        jButtonConfirmarAdicionarParaCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarAdicionarParaCarrinhoActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarAdicionarProdutoParaCarrinho.setText("Cancelar");
+
+        javax.swing.GroupLayout jInternalFrameAdicionarCarrinhoLayout = new javax.swing.GroupLayout(jInternalFrameAdicionarCarrinho.getContentPane());
+        jInternalFrameAdicionarCarrinho.getContentPane().setLayout(jInternalFrameAdicionarCarrinhoLayout);
+        jInternalFrameAdicionarCarrinhoLayout.setHorizontalGroup(
+            jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEntradaProduto)
+                            .addComponent(jLabel17))
+                        .addGap(75, 75, 75)
+                        .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxAdicionarProdutoNoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                                .addComponent(jTextFieldEntradaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(jLabelAdicionarNoCarrinho)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldPesquisandoQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65))))
+            .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jButtonProcurarProduto)
+                .addGap(74, 74, 74)
+                .addComponent(jButtonConfirmarAdicionarParaCarrinho)
+                .addGap(113, 113, 113)
+                .addComponent(jButtonCancelarAdicionarProdutoParaCarrinho)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jInternalFrameAdicionarCarrinhoLayout.setVerticalGroup(
+            jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(jComboBoxAdicionarProdutoNoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldEntradaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAdicionarNoCarrinho)
+                            .addComponent(jTextFieldPesquisandoQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabelEntradaProduto))
+                .addGap(42, 42, 42)
+                .addGroup(jInternalFrameAdicionarCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonProcurarProduto)
+                    .addComponent(jButtonConfirmarAdicionarParaCarrinho)
+                    .addComponent(jButtonCancelarAdicionarProdutoParaCarrinho))
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
 
         jInternalFrameCarrinho.setTitle("Carrinho");
         jInternalFrameCarrinho.setVisible(true);
@@ -191,6 +324,11 @@ public class GUIMenu extends javax.swing.JFrame {
         jLabel5.setText("ID:");
 
         jTextFieldEditarID.setEnabled(false);
+        jTextFieldEditarID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEditarIDActionPerformed(evt);
+            }
+        });
 
         jButtonEditarSalvar.setText("Salvar");
         jButtonEditarSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -214,22 +352,35 @@ public class GUIMenu extends javax.swing.JFrame {
 
         jLabel14.setText("Estoque");
 
-        jTextFieldEditarEstoque.setText("jTextField1");
+        jLabel16.setText("Código de Barras");
 
         javax.swing.GroupLayout jInternalFrameEditarCadastroLayout = new javax.swing.GroupLayout(jInternalFrameEditarCadastro.getContentPane());
         jInternalFrameEditarCadastro.getContentPane().setLayout(jInternalFrameEditarCadastroLayout);
         jInternalFrameEditarCadastroLayout.setHorizontalGroup(
             jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(62, 62, 62)
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
+                        .addComponent(jLabel10)
+                        .addGap(32, 32, 32)
+                        .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel14)
+                        .addGap(28, 28, 28)
+                        .addComponent(jTextFieldEditarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldEditarTelefoneForne, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel16)
+                            .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel11)))
                         .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
                                 .addGap(31, 31, 31)
@@ -242,23 +393,14 @@ public class GUIMenu extends javax.swing.JFrame {
                             .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldEditarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                                        .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel14)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextFieldEditarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTextFieldEditarFornecedor)
+                                    .addComponent(jTextFieldEditarNome)
+                                    .addComponent(jTextFieldEditarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameEditarCadastroLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextFieldEditarPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(186, 186, 186))))
-                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldEditarTelefoneForne, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                                .addGap(186, 186, 186)))))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         jInternalFrameEditarCadastroLayout.setVerticalGroup(
             jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,13 +413,17 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldEditarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jTextFieldEditarValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(jTextFieldEditarEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextFieldEditarFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,7 +439,7 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonEditarSalvar)
                     .addComponent(jButtonEditarCancelar))
-                .addGap(16, 16, 16))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jInternalFrameCadastroProduto.setTitle("Cadastro de Produtos");
@@ -346,44 +492,45 @@ public class GUIMenu extends javax.swing.JFrame {
             .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                    .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldCadastroProdutoPrecoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel13)
+                                    .addGap(32, 32, 32)
+                                    .addComponent(jTextFieldCadastroProdutoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                                        .addComponent(jLabelCadastroProdutoNome)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextFieldCadastroProdutoNome)
+                                        .addGap(2, 2, 2))
+                                    .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                                        .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabelCadastroProdutoPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel8))
+                                        .addGap(23, 23, 23)
+                                        .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jTextFieldCadastroProdutoTelefoneFornecedor)
+                                            .addComponent(jTextFieldCadastroProdutoPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldCadastroProdutoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCadastroProdutoLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldCadastroProdutoPrecoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel13)
-                                .addGap(32, 32, 32)
-                                .addComponent(jTextFieldCadastroProdutoEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
-                                    .addComponent(jLabelCadastroProdutoNome)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldCadastroProdutoNome)
-                                    .addGap(2, 2, 2))
-                                .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
-                                    .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabelCadastroProdutoPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel8))
-                                    .addGap(23, 23, 23)
-                                    .addGroup(jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldCadastroProdutoTelefoneFornecedor)
-                                        .addComponent(jTextFieldCadastroProdutoPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextFieldCadastroProdutoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCadastroProdutoLayout.createSequentialGroup()
-                            .addComponent(jLabel15)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldCadastroProdutoCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(2, 2, 2)))
+                                .addComponent(jTextFieldCadastroProdutoCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)))
+                        .addGap(102, 102, 102))
                     .addGroup(jInternalFrameCadastroProdutoLayout.createSequentialGroup()
                         .addGap(214, 214, 214)
                         .addComponent(jButtonCadastroProdutoSalvar)
                         .addGap(79, 79, 79)
                         .addComponent(jButtonCadastroProdutoCancelar)
-                        .addGap(98, 98, 98)))
-                .addGap(102, 102, 102))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jInternalFrameCadastroProdutoLayout.setVerticalGroup(
             jInternalFrameCadastroProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,9 +633,9 @@ public class GUIMenu extends javax.swing.JFrame {
                         .addComponent(jButtonPesquisarCancelar)
                         .addGap(27, 27, 27))
                     .addGroup(jInternalFramePesquisarLayout.createSequentialGroup()
-                        .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPesquisarID, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxPesquisarAcao, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jInternalFramePesquisarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBoxPesquisarAcao, 0, 191, Short.MAX_VALUE)
+                            .addComponent(jTextFieldPesquisarID))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jInternalFramePesquisarLayout.setVerticalGroup(
@@ -515,6 +662,7 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
+        jDesktopPane1.setLayer(jInternalFrameAdicionarCarrinho, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameCarrinho, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameEditarCadastro, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFrameCadastroProduto, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -532,7 +680,9 @@ public class GUIMenu extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
+                        .addGap(30, 30, 30)
+                        .addComponent(jInternalFrameAdicionarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
                         .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(184, Short.MAX_VALUE))
             .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -551,9 +701,14 @@ public class GUIMenu extends javax.swing.JFrame {
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jInternalFrameCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(98, 98, 98)
-                .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jInternalFrameCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jInternalFrameAdicionarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(286, Short.MAX_VALUE))
             .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jDesktopPane1Layout.createSequentialGroup()
                     .addGap(460, 460, 460)
@@ -598,8 +753,21 @@ public class GUIMenu extends javax.swing.JFrame {
         jMenuBarPrincipal.add(jMenuPesquisar);
 
         jMenuVendas.setText("Vendas");
+        jMenuVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuVendasActionPerformed(evt);
+            }
+        });
 
-        jMenuItemVendasCarrinho.setText("Carrinho");
+        jMenuItemAdiconarNoCarrinho.setText("Adicionar No Carrinho");
+        jMenuItemAdiconarNoCarrinho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAdiconarNoCarrinhoActionPerformed(evt);
+            }
+        });
+        jMenuVendas.add(jMenuItemAdiconarNoCarrinho);
+
+        jMenuItemVendasCarrinho.setText("Pagamento / Carrinho");
         jMenuItemVendasCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemVendasCarrinhoActionPerformed(evt);
@@ -773,6 +941,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
         // 1. Pega os dados digitados nos campos
         int id = Integer.parseInt(jTextFieldEditarID.getText());
         String nome = jTextFieldEditarNome.getText();
+        String codigobarras = jTextFieldEditarCodigoBarras.getText();
         double valorcompra = Double.parseDouble(jTextFieldEditarValorCompra.getText());
         int estoque = Integer.parseInt(jTextFieldEditarEstoque.getText());
         String fornecedor = jTextFieldEditarFornecedor.getText();
@@ -789,6 +958,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
         // 4. Limpa os campos e fecha a janela de edição
         jTextFieldEditarID.setText("");
         jTextFieldEditarNome.setText("");
+        jTextFieldEditarCodigoBarras.setText("");
         jTextFieldEditarValorCompra.setText("");
         jTextFieldEditarEstoque.setText("");
         jTextFieldEditarFornecedor.setText("");
@@ -812,11 +982,12 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     if (encontrado != null) {
         jTextFieldEditarID.setText(String.valueOf(encontrado.getId()));
         jTextFieldEditarNome.setText(encontrado.getNome());
+        jTextFieldEditarCodigoBarras.setText(encontrado.getCodigoBarras());
         jTextFieldEditarValorCompra.setText(String.valueOf(encontrado.getValorCompra()));
         jTextFieldEditarEstoque.setText(String.valueOf(encontrado.getEstoque()));
         jTextFieldEditarFornecedor.setText(encontrado.getFornecedor());
         jTextFieldEditarTelefoneForne.setText(encontrado.getTelefoneForne());
-        jTextFieldEditarPreco.setText(String.valueOf((char) encontrado.getPreco()));
+        jTextFieldEditarPreco.setText(String.valueOf((double) encontrado.getPreco()));
     } else {
         JOptionPane.showMessageDialog(this, "Produto não encontrado!");
     }
@@ -825,6 +996,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
         // TODO add your handling code here:
         jTextFieldEditarID.setText("");
         jTextFieldEditarNome.setText("");
+        jTextFieldEditarCodigoBarras.setText("");
         jTextFieldEditarValorCompra.setText("");
         jTextFieldEditarEstoque.setText("");
         jTextFieldEditarFornecedor.setText("");
@@ -866,8 +1038,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     }//GEN-LAST:event_jMenuItemEdicaoProdutoActionPerformed
 
     private void jMenuItemVendasCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVendasCarrinhoActionPerformed
-           
-            Produto produto = new Produto();
+           Produto produto = new Produto();
            HashMap<Produto, Integer> carrinho = produto.recuperarCarrinho();
             
            DefaultTableModel modelo = new DefaultTableModel();
@@ -884,9 +1055,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
                         }
             // jTextFieldCarrinhoTotal.setText(total+"");
              
-            jInternalFrameCarrinho.setVisible(true);
-       
-                                             
+            jInternalFrameCarrinho.setVisible(true);                          
     }//GEN-LAST:event_jMenuItemVendasCarrinhoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -900,6 +1069,87 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private void jTextFieldCadastroProdutoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCadastroProdutoFornecedorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCadastroProdutoFornecedorActionPerformed
+
+    private void jTextFieldEditarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditarIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEditarIDActionPerformed
+
+    private void jMenuVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVendasActionPerformed
+        // TODO dd your handling code here:
+    }//GEN-LAST:event_jMenuVendasActionPerformed
+
+    private void jMenuItemAdiconarNoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAdiconarNoCarrinhoActionPerformed
+        // TODO add your handling code here:.
+         jInternalFrameAdicionarCarrinho.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAdiconarNoCarrinhoActionPerformed
+
+    private void jTextFieldPesquisandoQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPesquisandoQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPesquisandoQuantidadeActionPerformed
+
+    private void jButtonConfirmarAdicionarParaCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarAdicionarParaCarrinhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonConfirmarAdicionarParaCarrinhoActionPerformed
+
+    private void jButtonProcurarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProcurarProdutoActionPerformed
+  
+        Banco banco = new Banco();
+        String opcao = jComboBoxAdicionarProdutoNoCarrinho.getSelectedItem().toString();
+         String entrada = jTextFieldEntradaProduto.getText().trim();
+         Produto produtoEncontrado = null;
+
+           if (opcao.equalsIgnoreCase("ID")) {
+             try {
+            int id = Integer.parseInt(entrada);
+            produtoEncontrado = banco.buscarProdutoPorId(id);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "ID inválido.");
+            return;
+        }
+    } else if (opcao.equalsIgnoreCase("Nome")) {
+        produtoEncontrado = banco.buscarProdutoPorNomeExato(entrada);
+    } else if (opcao.equalsIgnoreCase("Código de Barras")) {
+        produtoEncontrado = banco.buscarProdutoPorCodigoBarras(entrada);
+    }
+
+    if (produtoEncontrado != null) {
+        DefaultTableModel modelo = (DefaultTableModel) jTableAdicionarProdutoNoCarrinho.getModel();
+        modelo.addRow(new Object[]{
+            produtoEncontrado.getId(),
+            produtoEncontrado.getNome(),
+            produtoEncontrado.getCodigoBarras(),
+            produtoEncontrado.getPreco()
+        });
+    } else {
+        JOptionPane.showMessageDialog(this, "Produto não encontrado.");
+    }
+
+    }//GEN-LAST:event_jButtonProcurarProdutoActionPerformed
+
+    private void jTableAdicionarProdutoNoCarrinhoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTableAdicionarProdutoNoCarrinhoAncestorAdded
+        // TODO add your handling code here:
+            DefaultTableModel modeloTabelaCarrinho = new DefaultTableModel(
+    new Object[]{"ID", "Nome", "Código de Barras", "Preço"}, 0
+);
+      jTableAdicionarProdutoNoCarrinho.setModel(modeloTabelaCarrinho);
+
+    }//GEN-LAST:event_jTableAdicionarProdutoNoCarrinhoAncestorAdded
+
+    private void jComboBoxAdicionarProdutoNoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAdicionarProdutoNoCarrinhoActionPerformed
+        // TODO add your handling code here:
+       String opcao = jComboBoxAdicionarProdutoNoCarrinho.getSelectedItem().toString();
+
+    if (opcao.equalsIgnoreCase("ID")) {
+        jLabelEntradaProduto.setText("Digite o ID:");
+    } else if (opcao.equalsIgnoreCase("Nome")) {
+        jLabelEntradaProduto.setText("Digite o Nome:");
+    } else if (opcao.equalsIgnoreCase("Código de Barras")) {
+        jLabelEntradaProduto.setText("Digite o Código de Barras:");
+    }
+
+    jTextFieldEntradaProduto.setText(""); // Limpa campo sempre que mudar a opção
+
+    }//GEN-LAST:event_jComboBoxAdicionarProdutoNoCarrinhoActionPerformed
           public JInternalFrame getJInternalFrameEditarCadastro(){
               return jInternalFrameEditarCadastro;
           }  
@@ -916,18 +1166,26 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
          public JInternalFrame getJInternalFrameCarrinho(){
              return jInternalFrameCarrinho;
          }
+         public javax.swing.JInternalFrame getJInternalFrameAdicionarCarrinho() {
+      return jInternalFrameAdicionarCarrinho;
+}
          
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCadastroProdutoCancelar;
     private javax.swing.JButton jButtonCadastroProdutoSalvar;
+    private javax.swing.JButton jButtonCancelarAdicionarProdutoParaCarrinho;
+    private javax.swing.JButton jButtonConfirmarAdicionarParaCarrinho;
     private javax.swing.JButton jButtonEditarCancelar;
     private javax.swing.JButton jButtonEditarSalvar;
     private javax.swing.JButton jButtonPesquisarCancelar;
     private javax.swing.JButton jButtonPesquisarConfirmar;
+    private javax.swing.JButton jButtonProcurarProduto;
+    private javax.swing.JComboBox<String> jComboBoxAdicionarProdutoNoCarrinho;
     private javax.swing.JComboBox<String> jComboBoxPesquisarAcao;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JInternalFrame jInternalFrameAdicionarCarrinho;
     private javax.swing.JInternalFrame jInternalFrameCadastroProduto;
     private javax.swing.JInternalFrame jInternalFrameCarrinho;
     private javax.swing.JInternalFrame jInternalFrameEditarCadastro;
@@ -939,6 +1197,8 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -947,12 +1207,15 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelAdicionarNoCarrinho;
     private javax.swing.JLabel jLabelCadastroProdutoNome;
     private javax.swing.JLabel jLabelCadastroProdutoPreco;
+    private javax.swing.JLabel jLabelEntradaProduto;
     private javax.swing.JLabel jLabelPesquisarQuantidade;
     private javax.swing.JMenuBar jMenuBarPrincipal;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuEdicao;
+    private javax.swing.JMenuItem jMenuItemAdiconarNoCarrinho;
     private javax.swing.JMenuItem jMenuItemCadastroDeProduto;
     private javax.swing.JMenuItem jMenuItemEdicaoProduto;
     private javax.swing.JMenuItem jMenuItemPesquisarProduto;
@@ -961,6 +1224,8 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JMenu jMenuVendas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTableAdicionarProdutoNoCarrinho;
     private javax.swing.JTable jTableCarrinho;
     private javax.swing.JTable jTablePesquisarPorNome;
     private javax.swing.JTextField jTextFieldCadastroProdutoCodigoBarras;
@@ -971,6 +1236,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTextField jTextFieldCadastroProdutoPrecoCompra;
     private javax.swing.JTextField jTextFieldCadastroProdutoTelefoneFornecedor;
     private javax.swing.JTextField jTextFieldCarrinhoTotal;
+    private javax.swing.JTextField jTextFieldEditarCodigoBarras;
     private javax.swing.JTextField jTextFieldEditarEstoque;
     private javax.swing.JTextField jTextFieldEditarFornecedor;
     private javax.swing.JTextField jTextFieldEditarID;
@@ -978,6 +1244,8 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTextField jTextFieldEditarPreco;
     private javax.swing.JTextField jTextFieldEditarTelefoneForne;
     private javax.swing.JTextField jTextFieldEditarValorCompra;
+    private javax.swing.JTextField jTextFieldEntradaProduto;
+    private javax.swing.JTextField jTextFieldPesquisandoQuantidade;
     private javax.swing.JTextField jTextFieldPesquisarID;
     private javax.swing.JTextField jTextFieldPesquisarQuantidade;
     // End of variables declaration//GEN-END:variables
@@ -985,4 +1253,5 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
    private boolean isEmpty() {
     return jTextFieldCadastroProdutoCodigoBarras.getText().trim().isEmpty();
 }
-}
+
+   }

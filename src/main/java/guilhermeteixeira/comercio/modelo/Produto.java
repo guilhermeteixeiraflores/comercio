@@ -129,11 +129,10 @@ public void setTelefoneForne(String telefoneForne) {
                 
                 return produtos;
             }
-             public ArrayList<Produto> pesquisarPorCodigoBarras(String codigobarras) {
+             public Produto pesquisarPorCodigoBarras(String codigobarras) {
                      Banco b = new Banco();
                Connection conexao = b.conectar();
-             ArrayList<Produto> produtos = b.buscarPorCodigoBarras(codigobarras);
-                      return produtos;
+                return b.buscarPorCodigoBarras(codigobarras);
 }
             public void deletar(int id) throws SQLException{
                   Banco b = new Banco();

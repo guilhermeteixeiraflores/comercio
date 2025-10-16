@@ -121,7 +121,7 @@ public class Banco {
         e.printStackTrace();   // imprime erro completo
     }
 }
-
+  
 public void salvar(Produto produto, Connection conexao) {
     salvar(produto.getNome(),produto.getCodigoBarras(),
         produto.getValorCompra(),
@@ -132,7 +132,64 @@ public void salvar(Produto produto, Connection conexao) {
     );
 
 }
-        
+      public Produto buscarProdutoPorId(int id) {
+    ArrayList<Produto> lista = buscarPorTrechoNome(""); // ou outro método para buscar todos
+    for (Produto p : lista) {
+        if (p.getId() == id) return p;
+    }
+    return null;
+}
+      public Produto buscarProdutoPorNomeExato(String nome) {
+    ArrayList<Produto> lista = buscarPorTrechoNome(nome);
+    for (Produto p : lista) {
+        if (p.getNome().equalsIgnoreCase(nome)) return p;
+    }
+    return null;
+}
+      public Produto buscarProdutoPorCodigoBarras(String codigo) {
+    ArrayList<Produto> lista = buscarPorTrechoNome(""); // ou outro método
+    for (Produto p : lista) {
+        if (p.getCodigoBarras().equalsIgnoreCase(codigo)) return p;
+    }
+    return null;
+}
+      
+      
+   public Produto buscarPorCodigoBarras(String codigobarras){
+    String sql = "SELECT * FROM produto WHERE codigobarras = ?";
+    Produto produtoEncontrado = null;
+
+    try {
+        Connection conexao = conectar(); // Usa o método de conexão do próprio Banco.java
+        PreparedStatement stmt = conexao.prepareStatement(sql);
+        stmt.setString(1, codigobarras); // Substitui o ? da query pelo valor digitado
+
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            String nome = rs.getString("nome");
+            double valorcompra = rs.getDouble("valorcompra");
+            int estoque = rs.getInt("estoque");
+            String fornecedor = rs.getString("fornecedor");
+            String telefoneforne = rs.getString("telefoneforne");
+            double preco = rs.getDouble("preco");
+
+            produtoEncontrado = new Produto(nome, codigobarras, valorcompra, estoque, fornecedor, telefoneforne, preco);
+            produtoEncontrado.setId(rs.getInt("id")); // Seta o ID do produto encontrado
+        }
+
+        rs.close();
+        stmt.close();
+        conexao.close();
+
+    } catch (SQLException e) {
+        System.out.println("Erro ao buscar produto por código de barras:");
+        e.printStackTrace();
+    }
+
+    return produtoEncontrado;
+}
+
        public ArrayList<Produto> buscarPorTrechoNome(String trechoNome){
            ArrayList<Produto> listaDeProdutos = new ArrayList<>();
            String trechoNormalizado = "%" + normalizarTexto(trechoNome) + "%";
@@ -304,10 +361,8 @@ public void salvar(Produto produto, Connection conexao) {
     return carrinho;
 }
 
-    public ArrayList<Produto> buscarPorCodigoBarras(String codigobarras) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-}                 
+  
+}
+  
               
               
