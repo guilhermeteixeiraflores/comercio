@@ -22,7 +22,7 @@ public class Carrinho {
              produtos.add(produto);
              
          }
-         public void removerCarrinho(int id) {
+         public void removerProdutoCarrinho(int id) {
              for (int i = 0; i<produtos.size(); i++){
                 if (produtos.get(i).getId() == id) {
                     produtos.remove(produtos.get(i));

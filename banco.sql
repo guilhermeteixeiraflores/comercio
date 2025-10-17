@@ -11,3 +11,24 @@ CREATE TABLE IF NOT EXISTS produto (
     telefoneforne VARCHAR(16),
     preco DOUBLE(10,2) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigoPedido VARCHAR(20),
+    comercio VARCHAR(100),
+    cnpj VARCHAR(18),
+    telefoneComercio VARCHAR(18),
+    bairro VARCHAR(100),
+    cidade VARCHAR(100),
+    uf VARCHAR(10),
+    rua VARCHAR(100),
+    numero VARCHAR(10),
+    operador VARCHAR(100),
+    cpfConsumidor VARCHAR(14),
+    formaPagamento VARCHAR(20)
+    volume DOUBLE,
+    quantidade INT NOT NULL,
+    pagamento DOUBLE(10,2) NOT NULL,
+ total DOUBLE (10,2)NOT NULL,
+ troco DOUBLE (10,2) NOT NULL
+);

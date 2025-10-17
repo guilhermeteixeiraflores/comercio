@@ -187,7 +187,7 @@
       <SubComponents>
         <Container class="javax.swing.JInternalFrame" name="jInternalFrameAdicionarCarrinho">
           <Properties>
-            <Property name="title" type="java.lang.String" value="Adiconar Produtos Para Carrinho (VENDAS R$)"/>
+            <Property name="title" type="java.lang.String" value="Adicionar Produtos Para Carrinho (VENDAS R$)"/>
             <Property name="visible" type="boolean" value="true"/>
           </Properties>
 
@@ -211,10 +211,10 @@
                                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                       <Component id="jLabelAdicionarNoCarrinho" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldPesquisandoQuantidade" min="-2" pref="146" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldPesquisandoQuantidade" min="-2" pref="99" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="245" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jScrollPane3" min="-2" pref="828" max="-2" attributes="0"/>
@@ -225,9 +225,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                       <Component id="jButtonProcurarProduto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Component id="jButtonConfirmarAdicionarParaCarrinho" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                       <Component id="jButtonCancelarAdicionarProdutoParaCarrinho" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -325,7 +325,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButtonProcurarProduto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Procurar"/>
+                <Property name="text" type="java.lang.String" value="Registrar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonProcurarProdutoActionPerformed"/>
@@ -333,7 +333,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButtonConfirmarAdicionarParaCarrinho">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Confirmar"/>
+                <Property name="text" type="java.lang.String" value="Adicionar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonConfirmarAdicionarParaCarrinhoActionPerformed"/>
@@ -356,23 +356,133 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jScrollPane2" pref="699" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jTextFieldCarrinhoTotal" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabelDistribuidorRua" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldNomeDoComercio" min="-2" pref="256" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabelCnpjComercio" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldCnpjComercio" min="-2" pref="191" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabelTelefoneComercio" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabelBairro" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldBairro" min="-2" pref="330" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldTelefoneComercio" min="-2" pref="182" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelNomeRua" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldNomeRua" min="-2" pref="283" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Component id="jLabelNumero" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldNumero" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabelCidadeSaoPaulo" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabelOperadorNomeCaixa" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldCidadeSaoPaulo" min="-2" pref="99" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabelUF" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldUF" min="-2" pref="40" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jTextFieldNomeOperadorCaixa" min="-2" pref="310" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelvolume" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jTextFieldpagamentoCarrinhoVolume" min="-2" pref="88" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jLabelQuantidadeFinal" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="382" max="-2" attributes="0"/>
+                                                      <Component id="jLabelTroco" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldPagamentoCarrinhoTroco" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                                      <Component id="jButtonFinalizarPagamento" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabelCpfCliente" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldCpfCliente" min="-2" pref="181" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabeldigiteFormaPagamento" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                              <Component id="jComboBoxPagamentoCarrinhoOpcao" min="-2" pref="211" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldQuantidadeFinal" min="-2" pref="85" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabelPago" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jTextFieldPagamentoCarrinhoPago" min="-2" pref="97" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jLabelTotal" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldCarrinhoTotal" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="jLabelOpcaoPagarCom" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -380,15 +490,62 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" pref="237" max="-2" attributes="0"/>
-                      <EmptySpace pref="166" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="276" max="-2" attributes="0"/>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelDistribuidorRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNomeDoComercio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCnpjComercio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCnpjComercio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTelefoneComercio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldTelefoneComercio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextFieldCidadeSaoPaulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCidadeSaoPaulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelUF" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldUF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelNomeRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNomeRua" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelOperadorNomeCaixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNomeOperadorCaixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jComboBoxPagamentoCarrinhoOpcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabeldigiteFormaPagamento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelOpcaoPagarCom" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCpfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelvolume" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldpagamentoCarrinhoVolume" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelPago" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldPagamentoCarrinhoPago" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCarrinhoTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTroco" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldPagamentoCarrinhoTroco" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelQuantidadeFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldQuantidadeFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldCarrinhoTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonFinalizarPagamento" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -410,7 +567,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="jLabelTotal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Total R$"/>
               </Properties>
@@ -435,6 +592,161 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelvolume">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Volume"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldpagamentoCarrinhoVolume">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelPago">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pago"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldPagamentoCarrinhoPago">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelTroco">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Troco"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldPagamentoCarrinhoTroco">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldPagamentoCarrinhoTrocoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxPagamentoCarrinhoOpcao">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Cart&#xe3;o de Cr&#xe9;dito"/>
+                    <StringItem index="1" value="Cart&#xe3;o de D&#xe9;bito"/>
+                    <StringItem index="2" value="Dinheiro"/>
+                    <StringItem index="3" value="Pix"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxPagamentoCarrinhoOpcaoActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabeldigiteFormaPagamento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Forma de Pagamento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelOpcaoPagarCom">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel6"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCpfCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Digite o CPF do Cliente"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldCpfCliente">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelDistribuidorRua">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Com&#xe9;rcio"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNomeDoComercio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CIA DISTRIBUIDORA DE PRODUTOS BRASIL"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelNomeRua">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Rua"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNomeRua">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNomeRuaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelNumero">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="N&#xba;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNumero">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNumeroActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCnpjComercio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CNPJ"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldCnpjComercio">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelTelefoneComercio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tel: Com&#xe9;rcio"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldTelefoneComercio">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldTelefoneComercioActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelOperadorNomeCaixa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Operador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldNomeOperadorCaixa">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelQuantidadeFinal">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Quantidade"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldQuantidadeFinal">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelCidadeSaoPaulo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cidade"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldCidadeSaoPaulo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="S&#xe3;o Paulo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCidadeSaoPauloActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelBairro">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bairro"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldBairro">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelUF">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="UF"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldUF">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="S-P"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonFinalizarPagamento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Finalizar"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -63,10 +63,42 @@ public class GUIMenu extends javax.swing.JFrame {
         jInternalFrameCarrinho = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableCarrinho = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelTotal = new javax.swing.JLabel();
         jTextFieldCarrinhoTotal = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabelvolume = new javax.swing.JLabel();
+        jTextFieldpagamentoCarrinhoVolume = new javax.swing.JTextField();
+        jLabelPago = new javax.swing.JLabel();
+        jTextFieldPagamentoCarrinhoPago = new javax.swing.JTextField();
+        jLabelTroco = new javax.swing.JLabel();
+        jTextFieldPagamentoCarrinhoTroco = new javax.swing.JTextField();
+        jComboBoxPagamentoCarrinhoOpcao = new javax.swing.JComboBox<>();
+        jLabeldigiteFormaPagamento = new javax.swing.JLabel();
+        jLabelOpcaoPagarCom = new javax.swing.JLabel();
+        jLabelCpfCliente = new javax.swing.JLabel();
+        jTextFieldCpfCliente = new javax.swing.JTextField();
+        jLabelDistribuidorRua = new javax.swing.JLabel();
+        jTextFieldNomeDoComercio = new javax.swing.JTextField();
+        jLabelNomeRua = new javax.swing.JLabel();
+        jTextFieldNomeRua = new javax.swing.JTextField();
+        jLabelNumero = new javax.swing.JLabel();
+        jTextFieldNumero = new javax.swing.JTextField();
+        jLabelCnpjComercio = new javax.swing.JLabel();
+        jTextFieldCnpjComercio = new javax.swing.JTextField();
+        jLabelTelefoneComercio = new javax.swing.JLabel();
+        jTextFieldTelefoneComercio = new javax.swing.JTextField();
+        jLabelOperadorNomeCaixa = new javax.swing.JLabel();
+        jTextFieldNomeOperadorCaixa = new javax.swing.JTextField();
+        jLabelQuantidadeFinal = new javax.swing.JLabel();
+        jTextFieldQuantidadeFinal = new javax.swing.JTextField();
+        jLabelCidadeSaoPaulo = new javax.swing.JLabel();
+        jTextFieldCidadeSaoPaulo = new javax.swing.JTextField();
+        jLabelBairro = new javax.swing.JLabel();
+        jTextFieldBairro = new javax.swing.JTextField();
+        jLabelUF = new javax.swing.JLabel();
+        jTextFieldUF = new javax.swing.JTextField();
+        jButtonFinalizarPagamento = new javax.swing.JButton();
         jInternalFrameEditarCadastro = new javax.swing.JInternalFrame();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldEditarNome = new javax.swing.JTextField();
@@ -128,7 +160,7 @@ public class GUIMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro e Venda de Produtos");
 
-        jInternalFrameAdicionarCarrinho.setTitle("Adiconar Produtos Para Carrinho (VENDAS R$)");
+        jInternalFrameAdicionarCarrinho.setTitle("Adicionar Produtos Para Carrinho (VENDAS R$)");
         jInternalFrameAdicionarCarrinho.setVisible(true);
 
         jTableAdicionarProdutoNoCarrinho.setModel(new javax.swing.table.DefaultTableModel(
@@ -171,14 +203,14 @@ public class GUIMenu extends javax.swing.JFrame {
             }
         });
 
-        jButtonProcurarProduto.setText("Procurar");
+        jButtonProcurarProduto.setText("Registrar");
         jButtonProcurarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonProcurarProdutoActionPerformed(evt);
             }
         });
 
-        jButtonConfirmarAdicionarParaCarrinho.setText("Confirmar");
+        jButtonConfirmarAdicionarParaCarrinho.setText("Adicionar");
         jButtonConfirmarAdicionarParaCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConfirmarAdicionarParaCarrinhoActionPerformed(evt);
@@ -207,17 +239,17 @@ public class GUIMenu extends javax.swing.JFrame {
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabelAdicionarNoCarrinho)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldPesquisandoQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jTextFieldPesquisandoQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 245, Short.MAX_VALUE))
                     .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65))))
             .addGroup(jInternalFrameAdicionarCarrinhoLayout.createSequentialGroup()
                 .addGap(169, 169, 169)
                 .addComponent(jButtonProcurarProduto)
-                .addGap(74, 74, 74)
+                .addGap(88, 88, 88)
                 .addComponent(jButtonConfirmarAdicionarParaCarrinho)
-                .addGap(113, 113, 113)
+                .addGap(99, 99, 99)
                 .addComponent(jButtonCancelarAdicionarProdutoParaCarrinho)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -262,7 +294,7 @@ public class GUIMenu extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTableCarrinho);
 
-        jLabel6.setText("Total R$");
+        jLabelTotal.setText("Total R$");
 
         jTextFieldCarrinhoTotal.setEditable(false);
 
@@ -280,38 +312,241 @@ public class GUIMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabelvolume.setText("Volume");
+
+        jLabelPago.setText("Pago");
+
+        jLabelTroco.setText("Troco");
+
+        jTextFieldPagamentoCarrinhoTroco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPagamentoCarrinhoTrocoActionPerformed(evt);
+            }
+        });
+
+        jComboBoxPagamentoCarrinhoOpcao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cartão de Crédito", "Cartão de Débito", "Dinheiro", "Pix" }));
+        jComboBoxPagamentoCarrinhoOpcao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPagamentoCarrinhoOpcaoActionPerformed(evt);
+            }
+        });
+
+        jLabeldigiteFormaPagamento.setText("Forma de Pagamento");
+
+        jLabelOpcaoPagarCom.setText("jLabel6");
+
+        jLabelCpfCliente.setText("Digite o CPF do Cliente");
+
+        jLabelDistribuidorRua.setText("Comércio");
+
+        jTextFieldNomeDoComercio.setText("CIA DISTRIBUIDORA DE PRODUTOS BRASIL");
+
+        jLabelNomeRua.setText("Rua");
+
+        jTextFieldNomeRua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeRuaActionPerformed(evt);
+            }
+        });
+
+        jLabelNumero.setText("Nº");
+
+        jTextFieldNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNumeroActionPerformed(evt);
+            }
+        });
+
+        jLabelCnpjComercio.setText("CNPJ");
+
+        jLabelTelefoneComercio.setText("Tel: Comércio");
+
+        jTextFieldTelefoneComercio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTelefoneComercioActionPerformed(evt);
+            }
+        });
+
+        jLabelOperadorNomeCaixa.setText("Operador");
+
+        jLabelQuantidadeFinal.setText("Quantidade");
+
+        jLabelCidadeSaoPaulo.setText("Cidade");
+
+        jTextFieldCidadeSaoPaulo.setText("São Paulo");
+        jTextFieldCidadeSaoPaulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCidadeSaoPauloActionPerformed(evt);
+            }
+        });
+
+        jLabelBairro.setText("Bairro");
+
+        jLabelUF.setText("UF");
+
+        jTextFieldUF.setText("S-P");
+
+        jButtonFinalizarPagamento.setText("Finalizar");
+
         javax.swing.GroupLayout jInternalFrameCarrinhoLayout = new javax.swing.GroupLayout(jInternalFrameCarrinho.getContentPane());
         jInternalFrameCarrinho.getContentPane().setLayout(jInternalFrameCarrinhoLayout);
         jInternalFrameCarrinhoLayout.setHorizontalGroup(
             jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCarrinhoLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(36, 36, 36)
-                        .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(21, 21, 21))))
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addComponent(jLabelDistribuidorRua)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldNomeDoComercio, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelCnpjComercio)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextFieldCnpjComercio, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelTelefoneComercio))
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addComponent(jLabelBairro)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jTextFieldTelefoneComercio, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                        .addComponent(jLabelNomeRua)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldNomeRua, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(jLabelNumero)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(43, 43, 43)
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelCidadeSaoPaulo)
+                                            .addComponent(jLabelOperadorNomeCaixa))
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addGap(35, 35, 35)
+                                                .addComponent(jTextFieldCidadeSaoPaulo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelUF)
+                                                .addGap(60, 60, 60)
+                                                .addComponent(jTextFieldUF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jTextFieldNomeOperadorCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                        .addComponent(jLabelvolume)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addGap(211, 211, 211)
+                                                .addComponent(jButton1))
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addComponent(jTextFieldpagamentoCarrinhoVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabelQuantidadeFinal)))
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addGap(382, 382, 382)
+                                                .addComponent(jLabelTroco)
+                                                .addGap(35, 35, 35)
+                                                .addComponent(jTextFieldPagamentoCarrinhoTroco, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addGap(41, 41, 41)
+                                                .addComponent(jButtonFinalizarPagamento)))))
+                                .addGap(53, 53, 53))
+                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                        .addComponent(jLabelCpfCliente)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabeldigiteFormaPagamento)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(jComboBoxPagamentoCarrinhoOpcao, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                        .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton2)
+                                            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                                                .addGap(270, 270, 270)
+                                                .addComponent(jTextFieldQuantidadeFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabelPago)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldPagamentoCarrinhoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabelTotal)))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabelOpcaoPagarCom)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jInternalFrameCarrinhoLayout.setVerticalGroup(
             jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCarrinhoLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDistribuidorRua)
+                    .addComponent(jTextFieldNomeDoComercio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCnpjComercio)
+                    .addComponent(jTextFieldCnpjComercio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTelefoneComercio)
+                    .addComponent(jTextFieldTelefoneComercio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldCidadeSaoPaulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCidadeSaoPaulo)
+                    .addComponent(jLabelBairro)
+                    .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUF)
+                    .addComponent(jTextFieldUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomeRua)
+                    .addComponent(jTextFieldNomeRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNumero)
+                    .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelOperadorNomeCaixa)
+                    .addComponent(jTextFieldNomeOperadorCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxPagamentoCarrinhoOpcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabeldigiteFormaPagamento)
+                    .addComponent(jLabelOpcaoPagarCom)
+                    .addComponent(jLabelCpfCliente)
+                    .addComponent(jTextFieldCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelvolume)
+                    .addComponent(jTextFieldpagamentoCarrinhoVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPago)
+                    .addComponent(jTextFieldPagamentoCarrinhoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTotal)
+                    .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTroco)
+                    .addComponent(jTextFieldPagamentoCarrinhoTroco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelQuantidadeFinal)
+                    .addComponent(jTextFieldQuantidadeFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(23, 23, 23))
+                    .addComponent(jButtonFinalizarPagamento))
+                .addGap(14, 14, 14))
         );
 
         jInternalFrameEditarCadastro.setTitle("Edição De Cadastros");
@@ -1150,6 +1385,30 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     jTextFieldEntradaProduto.setText(""); // Limpa campo sempre que mudar a opção
 
     }//GEN-LAST:event_jComboBoxAdicionarProdutoNoCarrinhoActionPerformed
+
+    private void jTextFieldPagamentoCarrinhoTrocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPagamentoCarrinhoTrocoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPagamentoCarrinhoTrocoActionPerformed
+
+    private void jComboBoxPagamentoCarrinhoOpcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPagamentoCarrinhoOpcaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxPagamentoCarrinhoOpcaoActionPerformed
+
+    private void jTextFieldNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNumeroActionPerformed
+
+    private void jTextFieldNomeRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeRuaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeRuaActionPerformed
+
+    private void jTextFieldTelefoneComercioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneComercioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTelefoneComercioActionPerformed
+
+    private void jTextFieldCidadeSaoPauloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeSaoPauloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCidadeSaoPauloActionPerformed
           public JInternalFrame getJInternalFrameEditarCadastro(){
               return jInternalFrameEditarCadastro;
           }  
@@ -1179,10 +1438,12 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JButton jButtonConfirmarAdicionarParaCarrinho;
     private javax.swing.JButton jButtonEditarCancelar;
     private javax.swing.JButton jButtonEditarSalvar;
+    private javax.swing.JButton jButtonFinalizarPagamento;
     private javax.swing.JButton jButtonPesquisarCancelar;
     private javax.swing.JButton jButtonPesquisarConfirmar;
     private javax.swing.JButton jButtonProcurarProduto;
     private javax.swing.JComboBox<String> jComboBoxAdicionarProdutoNoCarrinho;
+    private javax.swing.JComboBox<String> jComboBoxPagamentoCarrinhoOpcao;
     private javax.swing.JComboBox<String> jComboBoxPesquisarAcao;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrameAdicionarCarrinho;
@@ -1203,15 +1464,31 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAdicionarNoCarrinho;
+    private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCadastroProdutoNome;
     private javax.swing.JLabel jLabelCadastroProdutoPreco;
+    private javax.swing.JLabel jLabelCidadeSaoPaulo;
+    private javax.swing.JLabel jLabelCnpjComercio;
+    private javax.swing.JLabel jLabelCpfCliente;
+    private javax.swing.JLabel jLabelDistribuidorRua;
     private javax.swing.JLabel jLabelEntradaProduto;
+    private javax.swing.JLabel jLabelNomeRua;
+    private javax.swing.JLabel jLabelNumero;
+    private javax.swing.JLabel jLabelOpcaoPagarCom;
+    private javax.swing.JLabel jLabelOperadorNomeCaixa;
+    private javax.swing.JLabel jLabelPago;
     private javax.swing.JLabel jLabelPesquisarQuantidade;
+    private javax.swing.JLabel jLabelQuantidadeFinal;
+    private javax.swing.JLabel jLabelTelefoneComercio;
+    private javax.swing.JLabel jLabelTotal;
+    private javax.swing.JLabel jLabelTroco;
+    private javax.swing.JLabel jLabelUF;
+    private javax.swing.JLabel jLabeldigiteFormaPagamento;
+    private javax.swing.JLabel jLabelvolume;
     private javax.swing.JMenuBar jMenuBarPrincipal;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuEdicao;
@@ -1228,6 +1505,7 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTable jTableAdicionarProdutoNoCarrinho;
     private javax.swing.JTable jTableCarrinho;
     private javax.swing.JTable jTablePesquisarPorNome;
+    private javax.swing.JTextField jTextFieldBairro;
     private javax.swing.JTextField jTextFieldCadastroProdutoCodigoBarras;
     private javax.swing.JTextField jTextFieldCadastroProdutoEstoque;
     private javax.swing.JTextField jTextFieldCadastroProdutoFornecedor;
@@ -1236,6 +1514,9 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTextField jTextFieldCadastroProdutoPrecoCompra;
     private javax.swing.JTextField jTextFieldCadastroProdutoTelefoneFornecedor;
     private javax.swing.JTextField jTextFieldCarrinhoTotal;
+    private javax.swing.JTextField jTextFieldCidadeSaoPaulo;
+    private javax.swing.JTextField jTextFieldCnpjComercio;
+    private javax.swing.JTextField jTextFieldCpfCliente;
     private javax.swing.JTextField jTextFieldEditarCodigoBarras;
     private javax.swing.JTextField jTextFieldEditarEstoque;
     private javax.swing.JTextField jTextFieldEditarFornecedor;
@@ -1245,9 +1526,19 @@ if (nome.isEmpty() || codigobarras.isEmpty() || precoStr.isEmpty() || valorcompr
     private javax.swing.JTextField jTextFieldEditarTelefoneForne;
     private javax.swing.JTextField jTextFieldEditarValorCompra;
     private javax.swing.JTextField jTextFieldEntradaProduto;
+    private javax.swing.JTextField jTextFieldNomeDoComercio;
+    private javax.swing.JTextField jTextFieldNomeOperadorCaixa;
+    private javax.swing.JTextField jTextFieldNomeRua;
+    private javax.swing.JTextField jTextFieldNumero;
+    private javax.swing.JTextField jTextFieldPagamentoCarrinhoPago;
+    private javax.swing.JTextField jTextFieldPagamentoCarrinhoTroco;
     private javax.swing.JTextField jTextFieldPesquisandoQuantidade;
     private javax.swing.JTextField jTextFieldPesquisarID;
     private javax.swing.JTextField jTextFieldPesquisarQuantidade;
+    private javax.swing.JTextField jTextFieldQuantidadeFinal;
+    private javax.swing.JTextField jTextFieldTelefoneComercio;
+    private javax.swing.JTextField jTextFieldUF;
+    private javax.swing.JTextField jTextFieldpagamentoCarrinhoVolume;
     // End of variables declaration//GEN-END:variables
 
    private boolean isEmpty() {
